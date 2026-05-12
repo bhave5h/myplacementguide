@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* ── Brand & Accent ── */
+  --color-primary:        #024ad8;
+  --color-primary-bright: #296ef9;
+  --color-primary-deep:   #0e3191;
+  --color-primary-soft:   #c9e0fc;
+  --color-on-primary:     #ffffff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* ── Ink / Text ── */
+  --color-ink:            #1a1a1a;
+  --color-ink-deep:       #000000;
+  --color-ink-soft:       #292929;
+  --color-on-ink:         #ffffff;
+  --color-charcoal:       #3d3d3d;
+  --color-graphite:       #636363;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* ── Surface ── */
+  --color-canvas:         #ffffff;
+  --color-paper:          #ffffff;
+  --color-cloud:          #f7f7f7;
+  --color-fog:            #e8e8e8;
+  --color-steel:          #c2c2c2;
+  --color-hairline:       #e8e8e8;
+  --color-hairline-strong:#c2c2c2;
+
+  /* ── Semantic ── */
+  --color-bloom-coral:    #ff5050;
+  --color-bloom-rose:     #f9d4d2;
+  --color-bloom-deep:     #b3262b;
+  --color-bloom-wine:     #5a1313;
+  --color-storm-mist:     #8ebdce;
+  --color-storm-sea:      #7fadbe;
+  --color-storm-deep:     #356373;
+  --color-error:          #b3262b;
+
+  /* ── Elevation Shadows ── */
+  --shadow-soft-lift:  0 2px 8px rgba(26,26,26,0.08);
+  --shadow-float:      0 8px 24px rgba(26,26,26,0.12);
+
+  /* ── Border Radius ── */
+  --rounded-none: 0px;
+  --rounded-xs:   2px;
+  --rounded-sm:   3px;
+  --rounded-md:   4px;
+  --rounded-lg:   8px;
+  --rounded-xl:   16px;
+  --rounded-pill: 9999px;
+
+  /* ── Spacing ── */
+  --spacing-section: 80px;
+
+  /* ── Font ── */
+  /* Handled by next/font/google in layout.tsx */
+  /* --font-display is provided by manrope.variable */
+  --font-body:    var(--font-display), Arial, sans-serif;
+
+  /* ── Animations ── */
+  --animate-fade-up: fade-up 0.5s ease-out both;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes ripple {
+    0%   { transform: translate(-50%,-50%) scale(0); opacity: 1; }
+    100% { transform: translate(-50%,-50%) scale(4); opacity: 0; }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ── Root ── */
+:root {
+  --max-w: 1366px;
+}
+
+html, body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-display), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.38;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+
+  /* Typography tokens */
+  .t-display-xxl { font-size:72px; font-weight:500; line-height:1.0; }
+  .t-display-xl  { font-size:56px; font-weight:500; line-height:1.0; }
+  .t-display-lg  { font-size:44px; font-weight:500; line-height:1.0; }
+  .t-display-md  { font-size:32px; font-weight:500; line-height:1.0; }
+  .t-display-sm  { font-size:24px; font-weight:500; line-height:1.17; }
+  .t-display-xs  { font-size:20px; font-weight:500; line-height:1.0; }
+  .t-body-lg     { font-size:18px; font-weight:400; line-height:1.33; }
+  .t-body-md     { font-size:16px; font-weight:400; line-height:1.38; }
+  .t-body-em     { font-size:16px; font-weight:500; line-height:1.38; }
+  .t-caption-md  { font-size:14px; font-weight:400; line-height:1.5; }
+  .t-caption-sm  { font-size:12px; font-weight:400; line-height:1.33; }
+  .t-caption-bd  { font-size:14px; font-weight:700; line-height:1.3; }
+  .t-link-md     { font-size:16px; font-weight:500; line-height:1.38; }
+  .t-button-md   {
+    font-size:14px; font-weight:600; line-height:1.4;
+    letter-spacing:0.7px; text-transform:uppercase;
+  }
+  .t-price-md    { font-size:24px; font-weight:500; line-height:1.17; }
 }
