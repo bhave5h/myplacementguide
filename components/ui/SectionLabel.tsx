@@ -2,7 +2,13 @@
 
 import { m, LazyMotion, domAnimation } from 'framer-motion'
 
-export function SectionLabel({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+interface SectionLabelProps {
+  children: React.ReactNode
+  className?: string
+  style?: React.CSSProperties
+}
+
+export function SectionLabel({ children, className = '', style }: SectionLabelProps) {
   return (
     <LazyMotion features={domAnimation}>
       <m.div
@@ -11,25 +17,10 @@ export function SectionLabel({ children, className = '' }: { children: React.Rea
         viewport={{ once: true, margin: '-10%' }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
         className={`flex items-center gap-3 ${className}`}
+        style={style}
       >
-        <span
-          style={{
-            display: 'block',
-            height: 1,
-            width: 28,
-            backgroundColor: 'var(--color-primary)',
-          }}
-        />
-        <span
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 12,
-            fontWeight: 600,
-            letterSpacing: '0.18em',
-            textTransform: 'uppercase',
-            color: 'var(--color-primary)',
-          }}
-        >
+        <span className="block h-[1px] w-7 bg-[var(--color-primary)]" />
+        <span className="font-display text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--color-primary)]">
           {children}
         </span>
       </m.div>

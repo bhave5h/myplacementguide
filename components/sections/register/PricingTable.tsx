@@ -10,9 +10,7 @@ import { m, LazyMotion, domAnimation } from 'framer-motion'
 export function PricingTable() {
   return (
     /* ── Cloud band for pricing (DESIGN.md: cloud alternating band) ── */
-    <section
-      style={{ backgroundColor: 'var(--color-cloud)', padding: '80px 24px', overflow: 'hidden' }}
-    >
+    <section className="bg-[var(--color-cloud)] py-20 px-6 overflow-hidden">
       <div className="max-w-[900px] mx-auto">
         <LazyMotion features={domAnimation}>
           <div className="flex flex-col md:flex-row gap-8 items-stretch justify-center">
@@ -29,88 +27,47 @@ export function PricingTable() {
                 >
                   {/* card-pricing-tier — DESIGN.md spec */}
                   <div
-                    style={{
-                      backgroundColor: 'var(--color-canvas)',
-                      borderRadius: 'var(--rounded-xl)',
-                      boxShadow: 'var(--shadow-soft-lift)',
-                      padding: '32px',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      height: '100%',
-                      position: 'relative',
-                      overflow: 'hidden',
-                      /* Featured tier: thin primary top border, per DESIGN.md */
-                      borderTop: isFeatured ? '3px solid var(--color-primary)' : '1px solid var(--color-hairline)',
-                      border: !isFeatured ? '1px solid var(--color-hairline)' : undefined,
-                    }}
+                    className={`bg-[var(--color-canvas)] rounded-[var(--rounded-xl)] shadow-[var(--shadow-soft-lift)] p-8 flex flex-col h-full relative overflow-hidden
+                      ${isFeatured ? 'border-t-[3px] border-t-[var(--color-primary)]' : 'border border-[var(--color-hairline)]'}`}
                   >
-                    <div style={{ marginBottom: 28 }}>
+                    <div className="mb-7">
                       <Badge variant={isFeatured ? 'new' : 'free'} className="mb-5">
                         {plan.badge}
                       </Badge>
-                      <h3
-                        style={{
-                          fontFamily: 'var(--font-display)',
-                          fontSize: 24,
-                          fontWeight: 500,
-                          color: 'var(--color-ink)',
-                          marginBottom: 10,
-                          lineHeight: 1.17,
-                        }}
-                      >
+                      <h3 className="font-display text-[24px] font-medium text-[var(--color-ink)] mb-2.5 leading-[1.17]">
                         {plan.tier}
                       </h3>
-                      <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 6 }}>
-                        <span
-                          style={{
-                            fontFamily: 'var(--font-display)',
-                            fontSize: 36,
-                            fontWeight: 700,
-                            /* Featured tier: primary colour on price stamp, per DESIGN.md */
-                            color: isFeatured ? 'var(--color-primary)' : 'var(--color-ink)',
-                            lineHeight: 1,
-                          }}
-                        >
+                      <div className="flex items-baseline gap-2.5 mb-1.5">
+                        <span className={`font-display text-[36px] font-bold leading-none ${isFeatured ? 'text-[var(--color-primary)]' : 'text-[var(--color-ink)]'}`}>
                           {plan.price}
                         </span>
                         {isFeatured && (
-                          <span
-                            style={{
-                              fontSize: 16,
-                              color: 'var(--color-graphite)',
-                              textDecoration: 'line-through',
-                            }}
-                          >
+                          <span className="text-[16px] text-[var(--color-graphite)] line-through">
                             ₹1,999
                           </span>
                         )}
                       </div>
-                      <p style={{ fontSize: 13, color: 'var(--color-graphite)' }}>
+                      <p className="text-[13px] text-[var(--color-graphite)]">
                         {plan.date} · {plan.seats}
                       </p>
                     </div>
 
-                    <ul style={{ display: 'flex', flexDirection: 'column', gap: 14, flex: 1, marginBottom: 32 }}>
+                    <ul className="flex flex-col gap-3.5 flex-1 mb-8">
                       {plan.features.map((feature, j) => (
-                        <li key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: 10 }}>
+                        <li key={j} className="flex items-start gap-2.5">
                           <Check
                             size={18}
                             weight="bold"
-                            style={{ color: 'var(--color-primary)', flexShrink: 0, marginTop: 2 }}
+                            className="text-[var(--color-primary)] shrink-0 mt-0.5"
                           />
-                          <span style={{ fontSize: 14, color: 'var(--color-charcoal)', lineHeight: 1.55 }}>
+                          <span className="text-[14px] text-[var(--color-charcoal)] leading-[1.55]">
                             {feature}
                           </span>
                         </li>
                       ))}
                     </ul>
 
-                    <div
-                      style={{
-                        paddingTop: 24,
-                        borderTop: '1px solid var(--color-hairline)',
-                      }}
-                    >
+                    <div className="pt-6 border-t border-[var(--color-hairline)]">
                       <Button
                         variant={isFeatured ? 'primary' : 'outline'}
                         size="lg"
@@ -120,15 +77,7 @@ export function PricingTable() {
                         {plan.cta}
                       </Button>
                       {isFeatured && (
-                        <p
-                          style={{
-                            fontSize: 12,
-                            textAlign: 'center',
-                            color: 'var(--color-graphite)',
-                            marginTop: 12,
-                            fontWeight: 500,
-                          }}
-                        >
+                        <p className="text-[12px] text-center text-[var(--color-graphite)] mt-3 font-medium">
                           100% Satisfaction Guarantee · Secure Payment
                         </p>
                       )}

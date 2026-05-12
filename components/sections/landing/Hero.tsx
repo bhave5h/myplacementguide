@@ -10,40 +10,13 @@ import { Card } from '@/components/ui/Card'
 
 export function Hero() {
   return (
-    <section
-      style={{ backgroundColor: 'var(--color-canvas)', overflow: 'hidden', position: 'relative' }}
-      className="pt-16 pb-20 lg:pt-24 lg:pb-32"
-    >
+    <section className="bg-[var(--color-canvas)] overflow-hidden relative pt-16 pb-20 lg:pt-24 lg:pb-32">
       {/* ── Blue Chevron Decorations (DESIGN.md: chevron-decoration) ── */}
       <div aria-hidden="true" className="hidden lg:block pointer-events-none">
         {/* Left slash */}
-        <div
-          style={{
-            position: 'absolute',
-            left: -40,
-            top: 0,
-            bottom: 0,
-            width: 80,
-            backgroundColor: 'var(--color-primary)',
-            transform: 'skewX(-10deg)',
-            opacity: 0.08,
-            zIndex: 0,
-          }}
-        />
+        <div className="absolute left-[-40px] top-0 bottom-0 w-20 bg-[var(--color-primary)] skew-x-[-10deg] opacity-[0.08] z-0" />
         {/* Right slash */}
-        <div
-          style={{
-            position: 'absolute',
-            right: -40,
-            top: 0,
-            bottom: 0,
-            width: 80,
-            backgroundColor: 'var(--color-primary)',
-            transform: 'skewX(-10deg)',
-            opacity: 0.08,
-            zIndex: 0,
-          }}
-        />
+        <div className="absolute right-[-40px] top-0 bottom-0 w-20 bg-[var(--color-primary)] skew-x-[-10deg] opacity-[0.08] z-0" />
       </div>
 
       <div className="max-w-[1366px] mx-auto px-6 lg:px-8 relative z-10">
@@ -60,32 +33,13 @@ export function Hero() {
             <SplitText
               text="Stop Applying. Start Getting Hired."
               as="h1"
-              className="text-balance"
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 'clamp(36px,5.5vw,64px)',
-                fontWeight: 500,
-                lineHeight: 1.05,
-                color: 'var(--color-ink)',
-                margin: 0,
-              }}
+              className="text-balance font-display text-[clamp(36px,5.5vw,64px)] font-medium leading-[1.05] text-[var(--color-ink)] m-0"
               by="word"
               staggerDelay={0.07}
             />
 
             <ScrollReveal delay={0.55}>
-              <p
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: 18,
-                  fontWeight: 400,
-                  lineHeight: 1.55,
-                  color: 'var(--color-charcoal)',
-                  maxWidth: 540,
-                  margin: 0,
-                }}
-                className="text-balance"
-              >
+              <p className="font-body text-[18px] font-normal leading-[1.55] text-[var(--color-charcoal)] max-w-[540px] m-0 text-balance">
                 Learn the Hiring Manager's Secret to cracking top IT &amp; Marketing roles — from a Founder who's been on both sides of the table.
               </p>
             </ScrollReveal>
@@ -94,36 +48,21 @@ export function Hero() {
               <Button variant="primary" size="lg" href="/register">
                 Register for Free Masterclass →
               </Button>
-              <span style={{ color: 'var(--color-graphite)', fontSize: 14 }}>
+              <span className="text-[var(--color-graphite)] text-[14px]">
                 Limited to 100 students
               </span>
             </ScrollReveal>
 
             {/* Trusted logos */}
             <ScrollReveal delay={0.95} className="w-full">
-              <p
-                style={{
-                  fontSize: 12,
-                  fontWeight: 600,
-                  letterSpacing: '0.14em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-graphite)',
-                  marginBottom: 14,
-                }}
-              >
+              <p className="text-[12px] font-semibold tracking-[0.14em] uppercase text-[var(--color-graphite)] mb-3.5">
                 Trusted offers from:
               </p>
               <div className="flex flex-wrap items-center gap-8">
                 {['AMAZON', 'TCS', 'ZOHO', 'COGNIZANT'].map((brand) => (
                   <span
                     key={brand}
-                    style={{
-                      fontFamily: 'var(--font-display)',
-                      fontSize: 16,
-                      fontWeight: 700,
-                      color: 'var(--color-steel)',
-                      letterSpacing: '0.06em',
-                    }}
+                    className="font-display text-[16px] font-bold text-[var(--color-steel)] tracking-[0.06em]"
                   >
                     {brand}
                   </span>
@@ -140,26 +79,10 @@ export function Hero() {
                 initial={{ clipPath: 'polygon(100% 0, 100% 0, 100% 100%, 100% 100%)' }}
                 animate={{ clipPath: 'polygon(8% 0, 100% 0, 100% 100%, 0% 100%)' }}
                 transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                style={{
-                  aspectRatio: '4/5',
-                  borderRadius: 'var(--rounded-xl)',
-                  overflow: 'hidden',
-                  boxShadow: 'var(--shadow-soft-lift)',
-                  backgroundColor: 'var(--color-cloud)',
-                  position: 'relative',
-                }}
+                className="aspect-[4/5] rounded-[var(--rounded-xl)] overflow-hidden shadow-[var(--shadow-soft-lift)] bg-[var(--color-cloud)] relative"
               >
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(135deg, var(--color-fog) 0%, var(--color-cloud) 100%)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <span style={{ color: 'var(--color-graphite)', fontSize: 13 }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-fog)] to-[var(--color-cloud)] flex items-center justify-center">
+                  <span className="text-[var(--color-graphite)] text-[13px]">
                     [Sarang Photo Placeholder]
                   </span>
                 </div>
@@ -170,13 +93,13 @@ export function Hero() {
                 initial={{ opacity: 0, y: 16, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ type: 'spring', delay: 0.7 }}
-                style={{ position: 'absolute', top: -20, left: -20, zIndex: 20 }}
+                className="absolute top-[-20px] left-[-20px] z-20"
               >
-                <Card variant="product" style={{ padding: '14px 20px' }}>
-                  <span style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 700, color: 'var(--color-ink)', display: 'block' }}>
+                <Card variant="product" className="px-5 py-3.5">
+                  <span className="font-display text-[22px] font-bold text-[var(--color-ink)] block">
                     5+ Years
                   </span>
-                  <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-primary)' }}>
+                  <span className="text-[11px] font-semibold tracking-[0.12em] uppercase text-[var(--color-primary)]">
                     IT Experience
                   </span>
                 </Card>
@@ -187,13 +110,13 @@ export function Hero() {
                 initial={{ opacity: 0, y: 16, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ type: 'spring', delay: 0.95 }}
-                style={{ position: 'absolute', bottom: -24, right: -16, zIndex: 20 }}
+                className="absolute bottom-[-24px] right-[-16px] z-20"
               >
-                <Card variant="product" style={{ padding: '14px 20px' }}>
-                  <span style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 700, color: 'var(--color-ink)', display: 'block' }}>
+                <Card variant="product" className="px-5 py-3.5">
+                  <span className="font-display text-[22px] font-bold text-[var(--color-ink)] block">
                     3
                   </span>
-                  <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-charcoal)' }}>
+                  <span className="text-[11px] font-semibold tracking-[0.12em] uppercase text-[var(--color-charcoal)]">
                     Companies Founded
                   </span>
                 </Card>
@@ -205,17 +128,10 @@ export function Hero() {
       </div>
 
       {/* ── Sticky Mobile CTA ── */}
-      <div
-        className="fixed bottom-0 left-0 right-0 z-40 md:hidden flex items-center justify-between px-5 py-3"
-        style={{
-          backgroundColor: 'var(--color-canvas)',
-          borderTop: '1px solid var(--color-hairline)',
-          boxShadow: '0 -4px 20px rgba(26,26,26,0.08)',
-        }}
-      >
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden flex items-center justify-between px-5 py-3 bg-[var(--color-canvas)] border-t border-[var(--color-hairline)] shadow-[0_-4px_20px_rgba(26,26,26,0.08)]">
         <div className="flex flex-col">
-          <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-ink)' }}>Free Masterclass</span>
-          <span style={{ fontSize: 12, color: 'var(--color-primary)' }}>May 24 &amp; 31</span>
+          <span className="text-[14px] font-semibold text-[var(--color-ink)]">Free Masterclass</span>
+          <span className="text-[12px] text-[var(--color-primary)]">May 24 &amp; 31</span>
         </div>
         <Button variant="primary" size="sm" href="/register">
           Register Now
