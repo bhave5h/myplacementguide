@@ -44,7 +44,7 @@ export function AboutMentor() {
 
   return (
     /* ── Ink slab (DESIGN.md: promo-strip-dark / help-band-dark) ── */
-    <section className="bg-[var(--color-ink)] py-20 px-6 overflow-hidden">
+    <section className="bg-[var(--color-ink)] py-12 lg:py-20 px-6 overflow-hidden">
       <div className="max-w-[1366px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 

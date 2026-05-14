@@ -32,18 +32,16 @@ export function ScrollReveal({
     <LazyMotion features={domAnimation}>
       <m.div
         initial={{ 
-          clipPath: 'inset(0 0 100% 0)',
           y: yOffset,
           x: xOffset,
           opacity: 0
         }}
         whileInView={{ 
-          clipPath: 'inset(0 0 0% 0)',
           y: 0,
           x: 0,
           opacity: 1
         }}
-        viewport={{ once: true, margin: "-10%" }}
+        viewport={{ once: true }}
         transition={{ 
           duration, 
           delay,

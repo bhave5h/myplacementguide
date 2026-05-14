@@ -49,43 +49,17 @@ export function CounterStat({
   return (
     <div className={`flex flex-col ${className}`}>
       <div
-        style={{
-          fontFamily: 'var(--font-display)',
-          fontSize: 52,
-          fontWeight: 500,
-          lineHeight: 1,
-          color: accentColor,
-          display: 'flex',
-          alignItems: 'baseline',
-          gap: 2,
-        }}
+        className="font-display text-[52px] font-medium leading-none flex items-baseline gap-0.5"
+        style={{ color: accentColor }}
       >
         <span ref={countRef}>{isNaN(parseInt(numericPart, 10)) ? value : 0}</span>
         <span>{suffix}</span>
       </div>
-      <div
-        style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: 13,
-          fontWeight: 500,
-          color: 'var(--color-charcoal)',
-          marginTop: 8,
-          textTransform: 'uppercase',
-          letterSpacing: '0.08em',
-        }}
-      >
+      <div className="font-body text-[13px] font-medium text-[var(--color-charcoal)] mt-2 uppercase tracking-[0.08em]">
         {label}
       </div>
       {description && (
-        <div
-          style={{
-            fontFamily: 'var(--font-body)',
-            fontSize: 14,
-            color: 'var(--color-graphite)',
-            marginTop: 6,
-            lineHeight: 1.5,
-          }}
-        >
+        <div className="font-body text-[14px] text-[var(--color-graphite)] mt-1.5 leading-[1.5]">
           {description}
         </div>
       )}

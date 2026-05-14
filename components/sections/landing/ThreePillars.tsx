@@ -32,25 +32,11 @@ export function ThreePillars() {
 
   return (
     /* ── White canvas band ── */
-    <section
-      style={{ backgroundColor: 'var(--color-canvas)', padding: '80px 24px', overflow: 'hidden' }}
-    >
+    <section className="bg-[var(--color-canvas)] py-12 lg:py-20 px-6 overflow-hidden">
       <div className="max-w-[1366px] mx-auto flex flex-col items-center">
         <SectionLabel className="mb-6 justify-center">What You Will Learn</SectionLabel>
 
-        <h2
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(26px,3.5vw,44px)',
-            fontWeight: 500,
-            lineHeight: 1.05,
-            color: 'var(--color-ink)',
-            textAlign: 'center',
-            marginBottom: 56,
-            maxWidth: 640,
-          }}
-          className="text-balance"
-        >
+        <h2 className="font-display text-[clamp(26px,3.5vw,44px)] font-medium leading-[1.05] text-[var(--color-ink)] text-center mb-14 max-w-[640px] text-balance">
           Three Pillars That Change Everything
         </h2>
 
@@ -62,82 +48,30 @@ export function ThreePillars() {
               return (
                 <div key={i} className="pillar-card opacity-0 h-full group">
                   {/* card-product: canvas bg, 16px radius, soft-lift shadow */}
-                  <div
-                    style={{
-                      backgroundColor: 'var(--color-canvas)',
-                      borderRadius: 'var(--rounded-xl)',
-                      boxShadow: 'var(--shadow-soft-lift)',
-                      padding: '32px 28px',
-                      height: '100%',
-                      position: 'relative',
-                      overflow: 'hidden',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      border: '1px solid var(--color-hairline)',
-                    }}
-                  >
+                  <div className="bg-[var(--color-canvas)] rounded-[var(--rounded-xl)] shadow-[var(--shadow-soft-lift)] p-8 lg:p-[32px_28px] h-full relative overflow-hidden flex flex-col border border-[var(--color-hairline)]">
+                    
                     {/* Large background number */}
                     <m.span
-                      className="absolute -right-3 -bottom-8 select-none pointer-events-none"
-                      style={{
-                        fontFamily: 'var(--font-display)',
-                        fontSize: 140,
-                        fontWeight: 700,
-                        color: 'var(--color-fog)',
-                        lineHeight: 1,
-                      }}
+                      className="absolute -right-3 -bottom-8 select-none pointer-events-none font-display text-[140px] font-bold text-[var(--color-fog)] leading-none"
                     >
                       {pillar.number}
                     </m.span>
 
-                    <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    <div className="relative z-10 flex flex-col h-full">
                       {/* Icon chip */}
-                      <div
-                        className="group-hover:scale-110 transition-transform duration-300"
-                        style={{
-                          width: 52,
-                          height: 52,
-                          borderRadius: 'var(--rounded-lg)',
-                          backgroundColor: 'var(--color-primary-soft)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          marginBottom: 20,
-                          color: 'var(--color-primary)',
-                          transition: 'background-color 0.25s, color 0.25s',
-                        }}
-                      >
+                      <div className="w-[52px] h-[52px] rounded-[var(--rounded-lg)] bg-[var(--color-primary-soft)] flex items-center justify-center mb-5 text-[var(--color-primary)] group-hover:scale-110 transition-transform duration-300">
                         <Icon size={26} weight="fill" />
                       </div>
 
-                      <div
-                        style={{
-                          fontFamily: 'var(--font-display)',
-                          fontSize: 12,
-                          fontWeight: 600,
-                          letterSpacing: '0.12em',
-                          textTransform: 'uppercase',
-                          color: 'var(--color-primary)',
-                          marginBottom: 8,
-                        }}
-                      >
+                      <div className="font-display text-[12px] font-semibold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-2">
                         {pillar.number}
                       </div>
 
-                      <h3
-                        style={{
-                          fontFamily: 'var(--font-display)',
-                          fontSize: 20,
-                          fontWeight: 500,
-                          lineHeight: 1.2,
-                          color: 'var(--color-ink)',
-                          marginBottom: 12,
-                        }}
-                      >
+                      <h3 className="font-display text-[20px] font-medium leading-[1.2] text-[var(--color-ink)] mb-3">
                         {pillar.title}
                       </h3>
 
-                      <p style={{ fontSize: 15, color: 'var(--color-charcoal)', lineHeight: 1.6 }}>
+                      <p className="text-[15px] text-[var(--color-charcoal)] leading-[1.6]">
                         {pillar.body}
                       </p>
                     </div>
@@ -149,8 +83,8 @@ export function ThreePillars() {
         </div>
 
         {/* ── CTA ── */}
-        <div style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: 15, color: 'var(--color-charcoal)', marginBottom: 20, fontWeight: 500 }}>
+        <div className="text-center">
+          <p className="text-[15px] text-[var(--color-charcoal)] mb-5 font-medium">
             Ready to master all three?
           </p>
           <Button variant="primary" size="lg" href="/register">

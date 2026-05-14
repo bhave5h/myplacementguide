@@ -41,7 +41,7 @@ export function TrustSignals() {
 
   return (
     /* ── White canvas band ── */
-    <section style={{ backgroundColor: 'var(--color-canvas)', padding: '80px 24px' }}>
+    <section className="bg-[var(--color-canvas)] py-20 px-6">
       <div className="max-w-[760px] mx-auto">
 
         {/* ── Trust badges — card-category-icon style ── */}
@@ -49,110 +49,50 @@ export function TrustSignals() {
           {TRUST.map(({ icon: Icon, label, sub, color, bg }) => (
             <div
               key={label}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                padding: 24,
-                borderRadius: 'var(--rounded-xl)',
-                backgroundColor: 'var(--color-cloud)',
-                border: '1px solid var(--color-hairline)',
-              }}
+              className="flex flex-col items-center text-center p-6 rounded-[var(--rounded-xl)] bg-[var(--color-cloud)] border border-[var(--color-hairline)]"
             >
               <div
-                style={{
-                  width: 48,
-                  height: 48,
-                  borderRadius: 'var(--rounded-lg)',
-                  backgroundColor: bg,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color,
-                  marginBottom: 14,
-                }}
+                className="w-12 h-12 rounded-[var(--rounded-lg)] flex items-center justify-center mb-3.5"
+                style={{ backgroundColor: bg, color }}
               >
                 <Icon size={24} weight="duotone" />
               </div>
-              <h4 style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-ink)', marginBottom: 5 }}>
+              <h4 className="text-[14px] font-semibold text-[var(--color-ink)] mb-1">
                 {label}
               </h4>
-              <p style={{ fontSize: 12, color: 'var(--color-graphite)', lineHeight: 1.5 }}>{sub}</p>
+              <p className="text-[12px] text-[var(--color-graphite)] leading-[1.5]">{sub}</p>
             </div>
           ))}
         </div>
 
         {/* ── FAQ Accordion — faq-row DESIGN.md spec ── */}
-        <div
-          style={{
-            backgroundColor: 'var(--color-cloud)',
-            borderRadius: 'var(--rounded-xl)',
-            padding: '32px',
-            boxShadow: 'var(--shadow-soft-lift)',
-          }}
-        >
-          <h3
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 24,
-              fontWeight: 500,
-              color: 'var(--color-ink)',
-              textAlign: 'center',
-              marginBottom: 28,
-            }}
-          >
+        <div className="bg-[var(--color-cloud)] rounded-[var(--rounded-xl)] p-8 shadow-[var(--shadow-soft-lift)]">
+          <h3 className="font-display text-[24px] font-medium text-[var(--color-ink)] text-center mb-7">
             Frequently Asked Questions
           </h3>
 
           <LazyMotion features={domAnimation}>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+            <div className="flex flex-col">
               {FAQS.map((faq, i) => {
                 const isOpen = openIndex === i
                 return (
                   <div
                     key={i}
-                    style={{
-                      borderBottom: i < FAQS.length - 1 ? '1px solid var(--color-hairline)' : 'none',
-                    }}
+                    className={i < FAQS.length - 1 ? 'border-bottom border-[var(--color-hairline)]' : ''}
+                    style={{ borderBottom: i < FAQS.length - 1 ? '1px solid var(--color-hairline)' : 'none' }}
                   >
                     {/* faq-row: canvas bg, rounded-lg, body-emphasis per DESIGN.md */}
                     <button
-                      style={{
-                        width: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: '18px 0',
-                        background: 'none',
-                        border: 'none',
-                        cursor: 'pointer',
-                        textAlign: 'left',
-                        gap: 16,
-                      }}
+                      className="w-full flex items-center justify-between py-4.5 bg-transparent border-none cursor-pointer text-left gap-4"
                       onClick={() => setOpenIndex(isOpen ? null : i)}
                       aria-expanded={isOpen}
                     >
-                      <span
-                        style={{
-                          fontFamily: 'var(--font-body)',
-                          fontSize: 15,
-                          fontWeight: 500,
-                          color: isOpen ? 'var(--color-primary)' : 'var(--color-ink)',
-                          lineHeight: 1.4,
-                          transition: 'color 0.2s',
-                        }}
-                      >
+                      <span className={`font-body text-[15px] font-medium leading-[1.4] transition-colors duration-200 ${isOpen ? 'text-[var(--color-primary)]' : 'text-[var(--color-ink)]'}`}>
                         {faq.q}
                       </span>
                       <CaretDown
                         size={18}
-                        style={{
-                          color: 'var(--color-graphite)',
-                          flexShrink: 0,
-                          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                          transition: 'transform 0.25s ease',
-                        }}
+                        className={`text-[var(--color-graphite)] shrink-0 transition-transform duration-250 ease-in-out ${isOpen ? 'rotate-180' : 'rotate-0'}`}
                       />
                     </button>
 
@@ -163,16 +103,9 @@ export function TrustSignals() {
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.28 }}
-                          style={{ overflow: 'hidden' }}
+                          className="overflow-hidden"
                         >
-                          <p
-                            style={{
-                              fontSize: 14,
-                              color: 'var(--color-charcoal)',
-                              lineHeight: 1.6,
-                              paddingBottom: 18,
-                            }}
-                          >
+                          <p className="text-[14px] text-[var(--color-charcoal)] leading-[1.6] pb-4.5">
                             {faq.a}
                           </p>
                         </m.div>

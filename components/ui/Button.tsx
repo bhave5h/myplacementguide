@@ -47,61 +47,29 @@ export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Bu
       if (props.onClick) props.onClick(e as any)
     }
 
-    /* ── Styles ── */
-    const base: React.CSSProperties = {
-      position: 'relative',
-      display: 'inline-flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontFamily: 'var(--font-display)',
-      fontSize: 14,
-      fontWeight: 600,
-      letterSpacing: '0.7px',
-      textTransform: 'uppercase',
-      height: 44,
-      borderRadius: 'var(--rounded-md)',
-      overflow: 'hidden',
-      whiteSpace: 'nowrap',
-      cursor: 'pointer',
-      transition: 'background-color 0.15s, border-color 0.15s, color 0.15s',
-      border: '1px solid transparent',
+    /* ── Tailwind Class Mappings ── */
+    const sizeClasses: Record<string, string> = {
+      sm: 'px-[18px] h-[38px] text-[13px]',
+      md: 'px-[24px] h-[44px] text-[14px]',
+      lg: 'px-[32px] h-[50px] text-[15px]',
     }
 
-    const sizeStyles: Record<string, React.CSSProperties> = {
-      sm: { padding: '0 18px', height: 38, fontSize: 13 },
-      md: { padding: '0 24px', height: 44 },
-      lg: { padding: '0 32px', height: 50, fontSize: 15 },
+    const variantClasses: Record<string, string> = {
+      primary: 'bg-[var(--color-primary)] text-[var(--color-on-primary)] border-transparent',
+      outline: 'bg-[var(--color-canvas)] text-[var(--color-primary)] border-[var(--color-primary)]',
+      'outline-ink': 'bg-[var(--color-canvas)] text-[var(--color-ink)] border-[var(--color-ink)]',
+      ghost: 'bg-transparent text-[var(--color-primary)] border-transparent underline underline-offset-4',
     }
 
-    const variantStyles: Record<string, React.CSSProperties> = {
-      primary: {
-        backgroundColor: 'var(--color-primary)',
-        color: 'var(--color-on-primary)',
-      },
-      outline: {
-        backgroundColor: 'var(--color-canvas)',
-        color: 'var(--color-primary)',
-        border: '1px solid var(--color-primary)',
-      },
-      'outline-ink': {
-        backgroundColor: 'var(--color-canvas)',
-        color: 'var(--color-ink)',
-        border: '1px solid var(--color-ink)',
-      },
-      ghost: {
-        backgroundColor: 'transparent',
-        color: 'var(--color-primary)',
-        border: 'none',
-        textDecoration: 'underline',
-        textUnderlineOffset: 4,
-      },
-    }
-
-    const combinedStyle: React.CSSProperties = {
-      ...base,
-      ...sizeStyles[size],
-      ...variantStyles[variant],
-    }
+    const buttonClasses = `
+      relative inline-flex items-center justify-center
+      font-display font-semibold tracking-[0.7px] uppercase
+      rounded-[var(--rounded-md)] overflow-hidden white-space-nowrap cursor-pointer
+      transition-colors duration-150 border
+      ${sizeClasses[size]}
+      ${variantClasses[variant]}
+      ${className}
+    `.trim()
 
     const inner = (
       <>
@@ -109,18 +77,9 @@ export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Bu
         {ripples.map(r => (
           <span
             key={r.id}
-            style={{
-              position: 'absolute',
-              left: r.x,
-              top: r.y,
-              width: 100,
-              height: 100,
-              transform: 'translate(-50%,-50%)',
-              borderRadius: '50%',
-              backgroundColor: variant === 'primary' ? 'rgba(255,255,255,0.25)' : 'rgba(2,74,216,0.15)',
-              pointerEvents: 'none',
-              animation: 'ripple 0.6s ease-out',
-            }}
+            className={`absolute w-[100px] h-[100px] translate-x-[-50%] translate-y-[-50%] rounded-full pointer-events-none animate-ripple
+              ${variant === 'primary' ? 'bg-[rgba(255,255,255,0.25)]' : 'bg-[rgba(2,74,216,0.15)]'}`}
+            style={{ left: r.x, top: r.y }}
           />
         ))}
       </>
@@ -130,18 +89,17 @@ export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Bu
 
     return (
       <LazyMotion features={domAnimation}>
-        <div ref={internalRef} style={{ display: 'inline-block' }}>
+        <div ref={internalRef} className="inline-block">
           <m.div style={{ x: xSpring, y: ySpring }}>
             {isLink ? (
-              <Link href={href!} style={combinedStyle} className={className} onClick={handleRipple as any}>
+              <Link href={href!} className={buttonClasses} onClick={handleRipple as any}>
                 {inner}
               </Link>
             ) : (
               <button
                 {...props}
                 ref={ref as any}
-                style={combinedStyle}
-                className={className}
+                className={buttonClasses}
                 onClick={handleRipple}
               >
                 {inner}

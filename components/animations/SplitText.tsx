@@ -34,7 +34,7 @@ export function SplitText({ text, as: Component = 'div', className = '', style, 
               className="inline-block"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, margin: "-10%" }}
+              viewport={{ once: true }}
               transition={{
                 duration: 0.5,
                 delay: i * staggerDelay,

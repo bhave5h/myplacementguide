@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             'provider': {
               '@type': 'Person',
               'name':  'Sarang Thakre',
-              'url':   'https://myplacementguide.com',
+              'url':   'https://myplacementguide-sw2p.vercel.app',
             },
             'offers': {
               '@type':         'Offer',

@@ -64,7 +64,6 @@ export function WhatsAppCTA() {
                 borderRadius: "50%",
                 backgroundColor: "#25D366",
                 color: "#fff",
-                boxShadow: "0 4px 16px rgba(37,211,102,0.35)",
                 transition: "box-shadow 0.2s",
               }}
             >
