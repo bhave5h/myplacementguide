@@ -87,7 +87,7 @@ export function LogoMarquee({
           }}
         >
           <div
-            className="marquee-track flex w-max"
+            className="marquee-track flex w-50vw"
             style={
               {
                 "--marquee-duration": animationDuration,
@@ -99,7 +99,7 @@ export function LogoMarquee({
             {/* First set of logos */}
             {logos.map((logo, index) => (
               <div
-                className="flex shrink-0 items-center justify-center px-8 py-4 opacity-60 transition-opacity duration-200 *:fill-[var(--color-ink)] hover:opacity-100"
+                className="flex shrink-0 items-center justify-center px-5 py-4 opacity-50 transition-opacity duration-200 *:fill-[var(--color-ink)] hover:opacity-100"
                 key={`first-${logo.name}-${index}`}
               >
                 {logo.logo}
@@ -108,7 +108,7 @@ export function LogoMarquee({
             {/* Second set of logos for seamless loop */}
             {logos.map((logo, index) => (
               <div
-                className="flex shrink-0 items-center justify-center px-8 py-4 opacity-60 transition-opacity duration-200 *:fill-[var(--color-ink)] hover:opacity-100"
+                className="flex shrink-0 items-center justify-center px-4 py-4 opacity-50 transition-opacity duration-200 *:fill-[var(--color-ink)] hover:opacity-100"
                 key={`second-${logo.name}-${index}`}
               >
                 {logo.logo}

@@ -25,7 +25,7 @@ export function Navbar() {
   return (
     <LazyMotion features={domAnimation}>
       {/* ── Utility Strip ── */}
-      <div
+      {/* <div
         style={{
           backgroundColor: 'var(--color-ink)',
           color: 'var(--color-on-ink)',
@@ -41,7 +41,7 @@ export function Navbar() {
         >
           Register Free →
         </Link>
-      </div>
+      </div> */}
 
       {/* ── Main Nav Bar ── */}
       <header
