@@ -78,7 +78,7 @@ export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Bu
           <span
             key={r.id}
             className={`absolute w-[100px] h-[100px] translate-x-[-50%] translate-y-[-50%] rounded-full pointer-events-none animate-ripple
-              ${variant === 'primary' ? 'bg-[rgba(255,255,255,0.25)]' : 'bg-[rgba(2,74,216,0.15)]'}`}
+              ${variant === 'primary' ? 'bg-[rgba(255,255,255,0.25)]' : 'bg-[rgba(22,163,74,0.15)]'}`}
             style={{ left: r.x, top: r.y }}
           />
         ))}

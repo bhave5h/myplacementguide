@@ -2,10 +2,10 @@
 
 @theme {
   /* ── Brand & Accent ── */
-  --color-primary:        #024ad8;
-  --color-primary-bright: #296ef9;
-  --color-primary-deep:   #0e3191;
-  --color-primary-soft:   #c9e0fc;
+  --color-primary:        #16a34a;
+  --color-primary-bright: #22c55e;
+  --color-primary-deep:   #15803d;
+  --color-primary-soft:   #dcfce7;
   --color-on-primary:     #ffffff;
 
   /* ── Ink / Text ── */

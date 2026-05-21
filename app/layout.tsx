@@ -51,10 +51,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           })}}
         />
       </head>
-      <body className={`${manrope.variable} antialiased bg-[var(--color-canvas)] text-[var(--color-ink)] max-w-6xl mx-auto container`}>
+      <body className={`${manrope.variable} antialiased bg-[var(--color-canvas)] text-[var(--color-ink)]`}>
         <SmoothScroll>
           <Navbar />
-          <main>{children}</main>
+          <div className="max-w-6xl mx-auto px-10">
+            <main>{children}</main>
+          </div>
           <Footer />
           <WhatsAppCTA />
         </SmoothScroll>

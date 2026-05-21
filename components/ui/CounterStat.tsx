@@ -9,7 +9,7 @@ interface CounterStatProps {
   suffix?: string
   className?: string
   description?: string
-  /** Override the number colour; defaults to primary blue */
+  /** Override the number colour; defaults to primary green */
   accentColor?: string
 }
 

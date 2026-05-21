@@ -10,7 +10,7 @@ const variantClasses: Record<BadgeProps['variant'], string> = {
   free: 'bg-[rgba(34,197,94,0.10)] text-[#16a34a] border-[rgba(34,197,94,0.25)]',
   urgent: 'bg-[var(--color-bloom-rose)] text-[var(--color-bloom-deep)] border-[rgba(179,38,43,0.2)]',
   bonus: 'bg-[rgba(245,166,35,0.10)] text-[#b45309] border-[rgba(245,166,35,0.25)]',
-  new: 'bg-[var(--color-primary-soft)] text-[var(--color-primary)] border-[rgba(2,74,216,0.2)]',
+  new: 'bg-[var(--color-primary-soft)] text-[var(--color-primary)] border-[rgba(22,163,74,0.2)]',
 }
 
 const dotClasses: Record<BadgeProps['variant'], string> = {

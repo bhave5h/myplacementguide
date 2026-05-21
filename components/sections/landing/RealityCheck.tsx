@@ -28,29 +28,30 @@ const STATS = [
 
 export function RealityCheck() {
   return (
-    <section className="bg-[var(--color-cloud)] py-12 lg:py-20 px-6 overflow-hidden">
-      <div className="max-w-[1366px] mx-auto max-w-4xl flex flex-col items-center text-center">
-
-        <SectionLabel className="mb-10 justify-center">The Hard Truth</SectionLabel>
-
+    <section className="bg-green-800/10 max-w-6xl mx-auto container overflow-hidden border-10 border-green-100 rounded-3xl p-10 mb-10">
+      <div className="w-auto relative flex-col items-center text-center pb-10">
         <div className="mb-16">
+               <ScrollReveal delay={0.1}>
+            <h2 className="font-semibold text-3xl md:text-5xl leading-[1.05] text-[var(--color-ink)] mb-2 text-balance">
+              The Truth Is
+            </h2>
+          </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="font-display text-[clamp(28px,4.5vw,52px)] font-medium leading-[1.05] text-[var(--color-ink)] mb-2 text-balance">
-              Nagpur colleges teach you the syllabus.
+            <h2 className="text-[20px] md:text-3xl font-medium leading-[1.05] text-[var(--color-ink)] mb-2 text-balance">
+              Colleges teach you the syllabus.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.22}>
-            <h2 className="font-display text-[clamp(28px,4.5vw,52px)] font-medium leading-[1.05] text-[var(--color-primary)] m-0 text-balance">
+            <h2 className="text-[20px] md:text-3xl font-medium leading-[1.05] text-[var(--color-primary)] m-0 text-balance">
               They don't teach you the Selection.
             </h2>
           </ScrollReveal>
         </div>
 
-        {/* Stat cards — each on a white canvas card with soft lift */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-2/3 mx-auto">
           {STATS.map((stat, i) => (
             <ScrollReveal key={i} delay={0.35 + i * 0.1} direction="up">
-              <div className="bg-[var(--color-canvas)] rounded-[var(--rounded-xl)] shadow-[var(--shadow-soft-lift)] p-8 lg:p-[32px_24px] flex flex-col items-center text-center gap-2.5">
+              <div className="bg-[var(--color-canvas)] rounded-[var(--rounded-xl)] shadow-[var(--shadow-soft-lift)] p-18 lg:p-[32px_24px] flex flex-col items-center text-center gap-2.5">
                 <CounterStat
                   value={stat.value}
                   suffix={stat.suffix}
@@ -64,7 +65,7 @@ export function RealityCheck() {
         </div>
 
         <ScrollReveal delay={0.75}>
-          <p className="font-body text-[17px] font-normal leading-[1.6] text-[var(--color-charcoal)] max-w-[560px] text-balance">
+          <p className="font-body text-[17px] font-normal leading-[1.6] text-[var(--color-charcoal)] mt-10 text-balance mx-auto w-2/3">
             Are you part of that 90%? If your resume isn't built for the algorithm,
             you're invisible — no matter how good you actually are.
           </p>
