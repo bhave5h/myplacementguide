@@ -28,7 +28,7 @@ const STATS = [
 
 export function RealityCheck() {
   return (
-    <section className="bg-green-800/10 max-w-6xl mx-auto container overflow-hidden border-10 border-green-100 rounded-3xl p-10 mb-10">
+    <section className="bg-green-800/10 max-w-6xl mx-auto container overflow-hidden border-10 border-green-100 rounded-3xl p-4 md:p-10 mb-10">
       <div className="w-auto relative flex-col items-center text-center pb-10">
         <div className="mb-16">
                <ScrollReveal delay={0.1}>
@@ -48,10 +48,10 @@ export function RealityCheck() {
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-2/3 mx-auto">
+        <div className="grid grid-cols-3 gap-2 md:gap-6 w-full md:w-2/3 mx-auto">
           {STATS.map((stat, i) => (
             <ScrollReveal key={i} delay={0.35 + i * 0.1} direction="up">
-              <div className="bg-[var(--color-canvas)] rounded-[var(--rounded-xl)] shadow-[var(--shadow-soft-lift)] p-18 lg:p-[32px_24px] flex flex-col items-center text-center gap-2.5">
+              <div className="bg-[var(--color-canvas)] rounded-[var(--rounded-xl)] shadow-[var(--shadow-soft-lift)] p-3 md:p-5 flex flex-col items-center justify-center text-center gap-2.5 h-full min-h-[160px] md:min-h-[200px]">
                 <CounterStat
                   value={stat.value}
                   suffix={stat.suffix}
