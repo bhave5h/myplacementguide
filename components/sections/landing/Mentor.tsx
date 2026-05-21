@@ -23,7 +23,7 @@ export interface AboutMentorProps {
 }
 
 export function AboutMentor({
-  name = "Sarang Divakar Thakre",
+  name = "Sarang Thakre",
   title = "Founder, NagpurHeights & BigTopSocial",
   imageSrc = "/images/hero.png",
   paragraphs = [
@@ -58,7 +58,7 @@ export function AboutMentor({
   ]
 }: AboutMentorProps) {
   return (
-    <section className="max-w-6xl mx-auto bg-green-800/10 lg:py-20 px-6 overflow-hidden rounded-3xl border-10 border-green-100">
+    <section className="max-w-6xl mx-auto bg-green-800/10 lg:py-10 px-5 overflow-hidden rounded-3xl border-10 border-green-100">
       {/* Person Schema Markup for SEO */}
       <script
         type="application/ld+json"
@@ -84,14 +84,21 @@ export function AboutMentor({
         }}
       />
 
-      <div className="max-w-5xl mx-auto p-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <div className="max-w-5xl mx-auto p-4 md:p-10">
+        {/* ── Heading: Always top center ── */}
+        <ScrollReveal delay={0.1}>
+          <h2 className="font-semibold text-3xl md:text-5xl leading-[1.05] text-center mb-8 md:mb-8">
+            Meet your Mentor
+          </h2>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0  items-start">
           
-          {/* ── Left Column: Portrait Card ── */}
+          {/* ── Left Column: Portrait Card + Stats ── */}
           <div className="lg:col-span-5 w-full flex flex-col items-center gap-6">
             <ScrollReveal direction="left">
-              <div className="w-full w- bg-white rounded-3xl p-1 border-2 border-black/50 shadow-[var(--shadow-float)] text-black flex flex-col p-3">
-                <div className="w-1xl h-96 rounded-3xl overflow-hidden bg-[#faf8f5] relative border-2 border-black/50 p-2">
+              <div className="w-full bg-white rounded-3xl border-2 border-black/50 shadow-[var(--shadow-float)] text-black flex flex-col p-3 items-center">
+                <div className="w-60 h-60 lg:w-80 lg:h-80 rounded-3xl overflow-hidden bg-[#faf8f5] relative border-2 border-black/50 p-2">
                   <Image
                     src={imageSrc}
                     alt={name}
@@ -101,8 +108,8 @@ export function AboutMentor({
                     priority
                   />
                 </div>
-                <div className="flex flex-col gap-1 px-1 py-1">
-                  <h3 className="font-display text-[22px] font-bold text-[var(--color-ink)] leading-none m-0">
+                <div className="flex flex-col gap-1 px-1 py-1 items-center">
+                  <h3 className="font-display text-[22px] font-bold text-[var(--color-ink)] leading-none mt-3">
                     {name}
                   </h3>
                   <p className="font-body text-[14px] text-[var(--color-graphite)] font-semibold leading-normal m-0 mt-2">
@@ -113,7 +120,7 @@ export function AboutMentor({
             </ScrollReveal>
 
             {/* Stats row – below portrait */}
-            <ScrollReveal delay={0.55} className="w-full max-w-[360px]">
+            <ScrollReveal delay={0.55} className="w-full max-w-[320px]">
               <div className="flex flex-col gap-3 w-full">
                 {stats.map((stat, i) => {
                   let IconComponent = Briefcase
@@ -168,20 +175,9 @@ export function AboutMentor({
             </ScrollReveal>
           </div>
 
-          {/* ── Right Column: Copy & Stats ── */}
+          {/* ── Right Column: Description / Intro ── */}
           <div className="lg:col-span-7 flex flex-col items-start w-full">
-            <SectionLabel className="mb-4 text-[var(--color-primary-bright)]">
-              Your Mentor
-            </SectionLabel>
-
-            <ScrollReveal delay={0.1}>
-              <h2 className="font-display text-[clamp(28px,3.5vw,44px)] font-medium leading-[1.1] text-white mb-6 text-balance">
-                Meet your Mentor
-              </h2>
-            </ScrollReveal>
-
-            {/* Paragraphs description */}
-            <div className="flex flex-col gap-4 text-white/80 font-body text-[15px] sm:text-[16px] leading-[1.6] mb-8">
+            <div className="flex flex-col gap-4 text-black/70 font-semibold text-[15px] sm:text-[16px] leading-[1.6] mb-8">
               {paragraphs.map((paragraph, index) => (
                 <ScrollReveal key={index} delay={0.15 + index * 0.08}>
                   <p 
@@ -191,7 +187,6 @@ export function AboutMentor({
                 </ScrollReveal>
               ))}
             </div>
-
           </div>
 
         </div>

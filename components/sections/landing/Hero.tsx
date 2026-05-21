@@ -120,7 +120,7 @@ export function Hero({
                   To Get Placed at Top Companies
                 </p>
 
-                <LogoMarquee title="" description="" speed="normal" />
+                <LogoMarquee title="" description="" speed="fast" />
               </ScrollReveal>
             </div>
 

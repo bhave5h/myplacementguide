@@ -33,7 +33,7 @@ export function LogoMarquee({
   title = "Trusted by industry leaders",
   description = "Join thousands of companies already using our platform",
   logos = DEFAULT_LOGOS,
-  speed = "normal",
+  speed = "fast",
   direction = "left",
   pauseOnHover = true,
 }: LogoMarqueeProps) {
