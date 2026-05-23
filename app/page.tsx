@@ -17,10 +17,10 @@ export default function Home() {
       <Hero />
       <RealityCheck />
       <AboutMentor />
-      <ThreePillars />
+      <Mission />
       <Curriculum />
       <Bonuses />
-      <Mission />
+      <ThreePillars />
       <Pricing />
       <ClosingBand />
     </>

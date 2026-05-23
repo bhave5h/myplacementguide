@@ -27,9 +27,9 @@ export function Hero({
   timeDateTime = "19:00",
 }: HeroProps) {
   return (
-    <section className="bg-[var(--color-canvas)] overflow-hidden relative lg:pt-5 mb-10">
+    <section className="overflow-hidden relative lg:pt-5 mb-10">
       <div
-        className="bg-cover bg-no-repeat rounded-3xl border-10 border-green-100 pt-10 pb-10"
+        className="bg-cover bg-no-repeat rounded-3xl pt-10 pb-10 md:p-10 md:pb-15 "
         style={{
           backgroundImage:
             "url('/Images/a.jpg')",

@@ -58,7 +58,7 @@ export function AboutMentor({
   ]
 }: AboutMentorProps) {
   return (
-    <section className="max-w-6xl mx-auto bg-green-800/10 lg:py-10 px-5 overflow-hidden rounded-3xl border-10 border-green-100">
+    <section className="max-w-6xl mx-auto lg:py-10 px-5 overflow-hidden rounded-3xl">
       {/* Person Schema Markup for SEO */}
       <script
         type="application/ld+json"
@@ -92,11 +92,11 @@ export function AboutMentor({
           </h2>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-0  items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* ── Left Column: Portrait Card + Stats ── */}
-          <div className="lg:col-span-5 w-full flex flex-col items-center gap-6">
-            <ScrollReveal direction="left">
+          <div className="lg:col-span-5 w-full flex flex-col items-center gap-6 md:max-w-2xl md:mx-auto lg:max-w-none">
+            <ScrollReveal direction="left" className="w-full max-w-[360px] md:max-w-2xl lg:max-w-[368px] mx-auto">
               <div className="w-full bg-white rounded-3xl border-2 border-black/50 shadow-[var(--shadow-float)] text-black flex flex-col p-3 items-center">
                 <div className="w-60 h-60 lg:w-80 lg:h-80 rounded-3xl overflow-hidden bg-[#faf8f5] relative border-2 border-black/50 p-2">
                   <Image
@@ -119,9 +119,9 @@ export function AboutMentor({
               </div>
             </ScrollReveal>
 
-            {/* Stats row – below portrait */}
-            <ScrollReveal delay={0.55} className="w-full max-w-[320px]">
-              <div className="flex flex-col gap-3 w-full">
+            {/* Stats column – below portrait, visible only on desktop */}
+            <ScrollReveal delay={0.55} className="hidden lg:flex w-full max-w-[368px]">
+              <div className="flex flex-row gap-2 w-full justify-between">
                 {stats.map((stat, i) => {
                   let IconComponent = Briefcase
                   let iconBgClass = "bg-green-100 text-green-700"
@@ -137,37 +137,37 @@ export function AboutMentor({
                   return (
                     <div
                       key={i}
-                      className="flex items-center gap-3.5 bg-white rounded-2xl p-4 border border-black/5 shadow-[var(--shadow-soft-lift)] text-black"
+                      className="flex-1 flex flex-col items-center justify-center gap-1.5 bg-white rounded-xl p-2.5 border border-black/5 shadow-[var(--shadow-soft-lift)] text-black min-w-0"
                     >
                       {/* Icon Container */}
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${iconBgClass}`}>
-                        <IconComponent size={20} weight="fill" />
+                      <div className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${iconBgClass}`}>
+                        <IconComponent size={15} weight="fill" />
                       </div>
 
-                      {/* Primary Metric */}
-                      <div className="flex flex-col leading-tight min-w-0">
-                        <span className="font-display text-[15px] sm:text-[16px] font-bold text-[var(--color-ink)] whitespace-nowrap">
-                          {stat.primaryMetric}
-                        </span>
-                        <span className="text-[10px] font-semibold text-[var(--color-graphite)] uppercase tracking-wide">
-                          {stat.primaryLabel}
-                        </span>
-                      </div>
+                      {/* Content Container */}
+                      <div className="flex flex-col gap-1 w-full min-w-0 text-center">
+                        {/* Primary Metric */}
+                        <div className="flex flex-col leading-tight min-w-0">
+                          <span className="font-display text-[11.5px] font-bold text-[var(--color-ink)] whitespace-nowrap">
+                            {stat.primaryMetric}
+                          </span>
+                          <span className="text-[7.5px] font-semibold text-[var(--color-graphite)] uppercase tracking-wide">
+                            {stat.primaryLabel}
+                          </span>
+                        </div>
 
-                      {/* Optional Divider & Secondary Metric */}
-                      {stat.secondaryMetric && (
-                        <>
-                          <div className="w-[1px] h-6 bg-black/10 shrink-0 mx-1.5" />
-                          <div className="flex flex-col leading-tight min-w-0">
-                            <span className="font-display text-[15px] sm:text-[16px] font-bold text-[var(--color-ink)] whitespace-nowrap">
+                        {/* Optional Divider & Secondary Metric */}
+                        {stat.secondaryMetric && (
+                          <div className="flex flex-col leading-tight min-w-0 border-t border-black/5 pt-1 mt-0.5">
+                            <span className="font-display text-[11.5px] font-bold text-[var(--color-ink)] whitespace-nowrap">
                               {stat.secondaryMetric}
                             </span>
-                            <span className="text-[10px] font-semibold text-[var(--color-graphite)] uppercase tracking-wide">
+                            <span className="text-[7.5px] font-semibold text-[var(--color-graphite)] uppercase tracking-wide">
                               {stat.secondaryLabel}
                             </span>
                           </div>
-                        </>
-                      )}
+                        )}
+                      </div>
                     </div>
                   )
                 })}
@@ -176,10 +176,10 @@ export function AboutMentor({
           </div>
 
           {/* ── Right Column: Description / Intro ── */}
-          <div className="lg:col-span-7 flex flex-col items-start w-full">
-            <div className="flex flex-col gap-4 text-black/70 font-semibold text-[15px] sm:text-[16px] leading-[1.6] mb-8">
+          <div className="lg:col-span-7 flex flex-col items-start w-full md:max-w-2xl md:mx-auto lg:max-w-none">
+            <div className="flex flex-col gap-4 text-black/70 font-semibold text-[15px] sm:text-[16px] leading-[1.6] mb-8 w-full">
               {paragraphs.map((paragraph, index) => (
-                <ScrollReveal key={index} delay={0.15 + index * 0.08}>
+                <ScrollReveal key={index} delay={0.15 + index * 0.08} className="w-full">
                   <p 
                     className="m-0 text-balance" 
                     dangerouslySetInnerHTML={{ __html: paragraph }} 
@@ -187,6 +187,66 @@ export function AboutMentor({
                 </ScrollReveal>
               ))}
             </div>
+
+            {/* Horizontal Stats – visible on mobile and tablet, hidden on desktop */}
+            <ScrollReveal delay={0.55} className="w-full lg:hidden">
+              <div className="flex flex-row gap-2 sm:gap-4 w-full justify-between">
+                {stats.map((stat, i) => {
+                  let IconComponent = Briefcase
+                  let iconBgClass = "bg-green-100 text-green-700"
+
+                  if (stat.platform === 'linkedin') {
+                    IconComponent = LinkedinLogo
+                    iconBgClass = "bg-[#0a66c2]/10 text-[#0a66c2]"
+                  } else if (stat.platform === 'trophy') {
+                    IconComponent = Trophy
+                    iconBgClass = "bg-amber-100 text-amber-700"
+                  }
+
+                  return (
+                    <div
+                      key={i}
+                      className="flex-1 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-1.5 sm:gap-3 bg-white rounded-xl p-2 sm:p-4 border border-black/5 shadow-[var(--shadow-soft-lift)] text-black min-w-0"
+                    >
+                      {/* Icon Container */}
+                      <div className={`w-6 h-6 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center shrink-0 ${iconBgClass}`}>
+                        <IconComponent size={14} className="w-3.5 h-3.5 sm:w-5 sm:h-5" weight="fill" />
+                      </div>
+
+                      {/* Content Container */}
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 w-full min-w-0 text-center sm:text-left">
+                        {/* Primary Metric */}
+                        <div className="flex flex-col leading-tight min-w-0">
+                          <span className="font-display text-[10px] sm:text-[15px] font-bold text-[var(--color-ink)] whitespace-nowrap">
+                            {stat.primaryMetric}
+                          </span>
+                          <span className="text-[7px] sm:text-[9px] font-semibold text-[var(--color-graphite)] uppercase tracking-wide">
+                            {stat.primaryLabel}
+                          </span>
+                        </div>
+
+                        {/* Optional Divider */}
+                        {stat.secondaryMetric && (
+                          <div className="hidden sm:block w-[1px] h-6 bg-black/10 shrink-0 mx-0.5" />
+                        )}
+
+                        {/* Secondary Metric */}
+                        {stat.secondaryMetric && (
+                          <div className="flex flex-col leading-tight min-w-0 border-t border-black/5 sm:border-t-0 pt-0.5 sm:pt-0">
+                            <span className="font-display text-[10px] sm:text-[15px] font-bold text-[var(--color-ink)] whitespace-nowrap">
+                              {stat.secondaryMetric}
+                            </span>
+                            <span className="text-[7px] sm:text-[9px] font-semibold text-[var(--color-graphite)] uppercase tracking-wide">
+                              {stat.secondaryLabel}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </ScrollReveal>
           </div>
 
         </div>

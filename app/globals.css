@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+
   /* ── Brand & Accent ── */
   --color-primary:        #16a34a;
   --color-primary-bright: #22c55e;

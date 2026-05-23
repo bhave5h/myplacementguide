@@ -28,7 +28,7 @@ const STATS = [
 
 export function RealityCheck() {
   return (
-    <section className="bg-green-800/10 max-w-6xl mx-auto container overflow-hidden border-10 border-green-100 rounded-3xl p-4 md:p-10 mb-10">
+    <section className="bg-black-80/10 max-w-6xl mx-auto container overflow-hidden rounded-2xl p-4 md:p-10 mb-10">
       <div className="w-auto relative flex-col items-center text-center pb-10">
         <div className="mb-16">
                <ScrollReveal delay={0.1}>
