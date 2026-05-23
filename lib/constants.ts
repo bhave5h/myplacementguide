@@ -52,9 +52,9 @@ export const CURRICULUM_DAYS = [
 ]
 
 export const BONUSES = [
-  { label: 'Bonus 01', title: 'Premium Resume Templates', desc: 'Templates used in my startups.' },
-  { label: 'Bonus 02', title: 'Cold Email Scripts for HRs', desc: 'Outreach sequences that get replies.' },
-  { label: 'Bonus 03', title: 'The Internship Gateway', desc: 'Opportunity to intern at BigTopSocial or Matoshri Realestate for top performers.' },
+  { label: 'Bonus 01', icon: '📄', title: 'Premium Resume Templates', desc: 'Templates used in my startups.' },
+  { label: 'Bonus 02', icon: '📧', title: 'Cold Email Scripts for HRs', desc: 'Outreach sequences that get replies.' },
+  { label: 'Bonus 03', icon: '🚀', title: 'The Internship Gateway', desc: 'Opportunity to intern at BigTopSocial or Matoshri Realestate for top performers.' },
 ]
 
 export const PRICING = [
