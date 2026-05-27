@@ -29,13 +29,13 @@ export function Hero({
   return (
     <section className="overflow-hidden relative lg:pt-5 mb-10">
       <div
-        className="bg-cover bg-no-repeat rounded-3xl pt-10 pb-10 md:p-10 md:pb-15 "
+        className="bg-cover bg-no-repeat rounded-3xl pt-10 pb-10 md:p-10 md:pb-15 mt-5 "
         style={{
           backgroundImage:
             "url('/Images/a.jpg')",
         }}
       >
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 relative z-10 ">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* ── Left Column: Copy ── */}
             <div className="lg:col-span-7 flex flex-col items-start gap-4">
@@ -116,7 +116,7 @@ export function Hero({
                   Register for Free →
                 </Button>
 
-                <p className="font-body text-[18px] mt-1 font-normal leading-[1.55] text-white/80 max-w-[540px] m-0 text-balance">
+                <p className="font-semibold text-[18px] mt-1 font-normal leading-[1.55] text-white/80 max-w-[540px] m-0 text-balance">
                   To Get Placed at Top Companies
                 </p>
 

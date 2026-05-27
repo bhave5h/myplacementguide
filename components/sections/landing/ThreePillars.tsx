@@ -32,14 +32,14 @@ export function ThreePillars() {
 
   return (
     /* ── White canvas band ── */
-    <section className="bg-[var(--color-canvas)] py-12 lg:py-20 px-6 overflow-hidden">
-      <div className="max-w-[1366px] mx-auto flex flex-col items-center">
-        <SectionLabel className="mb-6 justify-center">What You Will Learn</SectionLabel>
-
-        <h2 className="font-display text-[clamp(26px,3.5vw,44px)] font-medium leading-[1.05] text-[var(--color-ink)] text-center mb-14 max-w-[640px] text-balance">
-          Three Pillars That Change Everything
-        </h2>
-
+    <section className="max-w-6xl mx-auto bg-[var(--color-canvas)] py-12 lg:py-20 px-6 overflow-hidden bg-black/10 mt-10 rounded-3xl">
+      <h1 className="title text-center mb-2">
+        What Will You Learn
+      </h1>
+      <h3 className='text-para mb-10 text-center'>
+        Three Pillars That Change Everything
+      </h3>
+      <div className="mx-auto flex flex-col items-center">
         {/* ── Pillar Cards grid ── */}
         <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-14">
           <LazyMotion features={domAnimation}>

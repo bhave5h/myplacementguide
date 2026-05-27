@@ -58,7 +58,7 @@ export function AboutMentor({
   ]
 }: AboutMentorProps) {
   return (
-    <section className="max-w-6xl mx-auto lg:py-10 px-5 overflow-hidden rounded-3xl">
+    <section className="max-w-6xl mx-auto lg:py-0 px-5 overflow-hidden rounded-3xl bg-black/10">
       {/* Person Schema Markup for SEO */}
       <script
         type="application/ld+json"
@@ -87,7 +87,7 @@ export function AboutMentor({
       <div className="max-w-5xl mx-auto p-4 md:p-10">
         {/* ── Heading: Always top center ── */}
         <ScrollReveal delay={0.1}>
-          <h2 className="font-semibold text-3xl md:text-5xl leading-[1.05] text-center mb-8 md:mb-8">
+          <h2 className="title mb-8 md:mb-8">
             Meet your Mentor
           </h2>
         </ScrollReveal>
@@ -177,7 +177,7 @@ export function AboutMentor({
 
           {/* ── Right Column: Description / Intro ── */}
           <div className="lg:col-span-7 flex flex-col items-start w-full md:max-w-2xl md:mx-auto lg:max-w-none">
-            <div className="flex flex-col gap-4 text-black/70 font-semibold text-[15px] sm:text-[16px] leading-[1.6] mb-8 w-full">
+            <div className="flex flex-col gap-4 mb-8 w-full text-para ">
               {paragraphs.map((paragraph, index) => (
                 <ScrollReveal key={index} delay={0.15 + index * 0.08} className="w-full">
                   <p 

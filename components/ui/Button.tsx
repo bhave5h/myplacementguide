@@ -1,7 +1,6 @@
 'use client'
 
-import React, { useRef, useState, useEffect } from 'react'
-import { m, useMotionValue, useSpring, LazyMotion, domAnimation } from 'framer-motion'
+import React, { useState } from 'react'
 import Link from 'next/link'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -14,30 +13,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   ({ variant = 'primary', size = 'md', href, className = '', children, ...props }, ref) => {
-    const internalRef = useRef<HTMLDivElement>(null)
     const [ripples, setRipples] = useState<{ x: number; y: number; id: number }[]>([])
-
-    const x = useMotionValue(0)
-    const y = useMotionValue(0)
-    const xSpring = useSpring(x, { damping: 15, stiffness: 150, mass: 0.1 })
-    const ySpring = useSpring(y, { damping: 15, stiffness: 150, mass: 0.1 })
-
-    useEffect(() => {
-      const mq = window.matchMedia('(hover: hover)')
-      if (!mq.matches) return
-      const el = internalRef.current
-      if (!el) return
-
-      const onMove = (e: MouseEvent) => {
-        const { left, top, width, height } = el.getBoundingClientRect()
-        x.set((e.clientX - (left + width / 2)) * 0.12)
-        y.set((e.clientY - (top + height / 2)) * 0.12)
-      }
-      const onLeave = () => { x.set(0); y.set(0) }
-      el.addEventListener('mousemove', onMove)
-      el.addEventListener('mouseleave', onLeave)
-      return () => { el.removeEventListener('mousemove', onMove); el.removeEventListener('mouseleave', onLeave) }
-    }, [x, y])
 
     const handleRipple = (e: React.MouseEvent<HTMLElement>) => {
       const rect = e.currentTarget.getBoundingClientRect()
@@ -87,27 +63,28 @@ export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Bu
 
     const isLink = href !== undefined
 
+    if (isLink) {
+      return (
+        <Link
+          href={href!}
+          className={buttonClasses}
+          onClick={handleRipple as any}
+          ref={ref as any}
+        >
+          {inner}
+        </Link>
+      )
+    }
+
     return (
-      <LazyMotion features={domAnimation}>
-        <div ref={internalRef} className="inline-block">
-          <m.div style={{ x: xSpring, y: ySpring }}>
-            {isLink ? (
-              <Link href={href!} className={buttonClasses} onClick={handleRipple as any}>
-                {inner}
-              </Link>
-            ) : (
-              <button
-                {...props}
-                ref={ref as any}
-                className={buttonClasses}
-                onClick={handleRipple}
-              >
-                {inner}
-              </button>
-            )}
-          </m.div>
-        </div>
-      </LazyMotion>
+      <button
+        {...props}
+        ref={ref as any}
+        className={buttonClasses}
+        onClick={handleRipple}
+      >
+        {inner}
+      </button>
     )
   }
 )

@@ -18,9 +18,9 @@ export default function Home() {
       <RealityCheck />
       <AboutMentor />
       <Mission />
+      <ThreePillars />
       <Curriculum />
       <Bonuses />
-      <ThreePillars />
       <Pricing />
       <ClosingBand />
     </>
