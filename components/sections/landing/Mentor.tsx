@@ -25,7 +25,7 @@ export interface AboutMentorProps {
 export function AboutMentor({
   name = "Sarang Thakre",
   title = "Founder, NagpurHeights & BigTopSocial",
-  imageSrc = "/images/hero.png",
+  imageSrc = "/Images/hero.png",
   paragraphs = [
     "Hey Folks, I'm <b>Sarang Divakar Thakre</b>, and I'm super excited to be your mentor for this masterclass.",
     "I've helped <b>hundreds</b> of graduates and freshers in the Nagpur region build successful careers in IT & Marketing. As the founder of <b>NagpurHeights</b> & <b>BigTopSocial</b>, I've sat on both sides of the hiring table and know exactly how to make you stand out.",

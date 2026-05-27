@@ -139,7 +139,7 @@ export function Hero({
                   <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-fog)] to-[var(--color-cloud)] flex items-center justify-center">
                     <span className="text-[var(--color-graphite)] border-2 rounded-2xl border-green-100 text-[13px] w-full h-full overflow-hidden ">
                       <Image
-                        src="/images/hero2.png"
+                        src="/Images/hero2.png"
                         alt="sir"
                         width={1080}
                         height={1080}
