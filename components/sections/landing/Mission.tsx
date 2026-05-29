@@ -5,7 +5,7 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 export function Mission() {
   return (
-    <section id="mission" className="bg-black/10 rounded-2xl pt-10 pb-10 mt-10 p-5 md:p-0">
+    <section id="mission" className="bg-gray-100 rounded-2xl pt-10 pb-10 mt-10 p-5 md:p-0">
       <div className="max-w-6xl mx-auto px-4 sm:px-10 lg:px-10 py-10 lg:py-10">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal delay={0.1}>

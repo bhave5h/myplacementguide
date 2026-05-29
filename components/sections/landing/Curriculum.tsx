@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react'
 import { CURRICULUM_DAYS } from '@/lib/constants'
 import { initGSAP } from '@/lib/gsap'
+import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
 export function Curriculum() {
   const timelineRef = useRef<HTMLDivElement>(null)
@@ -26,38 +27,43 @@ export function Curriculum() {
   }, [])
 
   return (
-    <section id="curriculum" className="bg-[var(--color-canvas)]">
-      <div className="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-16 py-20 lg:py-28">
+    <section id="curriculum" className="max-w-6xl mx-auto bg-gray-100 py-12 lg:py-10 px-6 overflow-hidden mt-10 rounded-3xl">
+      <div className="max-w-5xl mx-auto p-4 md:p-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
 
           {/* Left: Header */}
           <div className="lg:col-span-2 lg:sticky lg:top-24">
-            <p className="text-[12px] font-semibold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-4">
-              The Paid Product
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold leading-none mb-4 text-[var(--color-ink)]">
-              10 Days to
-              <br />
-              Corporate Ready
-            </h2>
-            <p className="text-sm leading-relaxed mb-6 text-[var(--color-charcoal)]">
-              A structured, modular journey. Not a random collection of tips — a
-              deliberate transformation from campus to corporate.
-            </p>
-            <div
-              className="p-4 rounded-xl"
-              style={{ background: 'var(--color-primary-soft)', border: '1px solid var(--color-primary)' }}
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.8px] mb-1 text-[var(--color-primary)]">
-                Starts June 1
+            <ScrollReveal delay={0.1}>
+              <p className="font-display text-[12px] font-semibold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-2">
+                The Paid Product
               </p>
-              <p className="text-2xl font-bold leading-none text-[var(--color-primary)]">
-                ₹999
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <h2 className="title text-left mb-4">
+                10 Days to
+                <br />
+                Corporate Ready
+              </h2>
+            </ScrollReveal>
+            <ScrollReveal delay={0.3}>
+              <p className="text-para mb-6 text-balance">
+                A structured, modular journey. Not a random collection of tips — a
+                deliberate transformation from campus to corporate.
               </p>
-              <p className="text-xs mt-0.5 text-[var(--color-primary-deep)]">
-                Early Bird · Nagpur Students
-              </p>
-            </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.4}>
+              <div className="bg-white rounded-3xl border-2 border-black/40 shadow-[var(--shadow-soft-lift)] p-5">
+                <p className="font-display text-[12px] font-bold uppercase tracking-[0.8px] mb-1 text-[var(--color-primary)]">
+                  Starts June 1
+                </p>
+                <p className="font-display text-3xl font-bold leading-none text-[var(--color-ink)] mb-1">
+                  ₹999
+                </p>
+                <p className="text-[12.5px] font-semibold text-[var(--color-graphite)] uppercase tracking-wide">
+                  Early Bird · Nagpur Students
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Right: Timeline */}
@@ -83,13 +89,13 @@ export function Curriculum() {
                     boxShadow: '0 0 0 2px var(--color-primary-soft)',
                   }}
                 />
-                <span className="text-xs font-bold uppercase tracking-[0.8px] mb-1 text-[var(--color-primary)]">
+                <span className="font-display text-[12px] font-bold uppercase tracking-[0.8px] mb-1 text-[var(--color-primary)]">
                   {item.days}
                 </span>
-                <h3 className="text-base font-bold mt-0.5 mb-1 text-[var(--color-ink)]">
+                <h3 className="font-display text-[16px] font-bold mt-0.5 mb-1 text-[var(--color-ink)]">
                   {item.title}
                 </h3>
-                <p className="text-sm text-[var(--color-charcoal)]">
+                <p className="text-[14px] text-[var(--color-charcoal)] leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -100,3 +106,4 @@ export function Curriculum() {
     </section>
   )
 }
+

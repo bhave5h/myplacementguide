@@ -58,7 +58,7 @@ export function AboutMentor({
   ]
 }: AboutMentorProps) {
   return (
-    <section className="max-w-6xl mx-auto lg:py-0 px-5 overflow-hidden rounded-3xl bg-black/10">
+    <section className="max-w-6xl mx-auto lg:py-0 px-5 overflow-hidden rounded-3xl bg-gray-100">
       {/* Person Schema Markup for SEO */}
       <script
         type="application/ld+json"

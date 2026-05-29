@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react'
 import { WHATSAPP_URL } from '@/lib/constants'
 import { initGSAP } from '@/lib/gsap'
+import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
 const FREE_FEATURES = [
   'Resume mistakes to avoid',
@@ -58,37 +59,42 @@ export function Pricing() {
   }, [])
 
   return (
-    <section id="pricing" className="bg-[var(--color-canvas)]">
-      <div className="max-w-[1366px] mx-auto px-4 sm:px-6 lg:px-16 py-20 lg:py-28">
-        <div className="text-center mb-14">
-          <p className="text-[12px] font-semibold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-4">
-            Registration
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold leading-none mb-3 text-[var(--color-ink)]">
-            Choose Your Path
-          </h2>
-          <p className="text-sm text-[var(--color-graphite)]">
-            Start free. Go all-in when you&apos;re ready.
-          </p>
+    <section id="pricing" className="max-w-6xl mx-auto bg-gray-100 py-12 lg:py-10 px-6 overflow-hidden mt-10 rounded-3xl">
+      <div className="max-w-5xl mx-auto p-4 md:p-10">
+        <div className="text-center mb-10">
+          <ScrollReveal delay={0.1}>
+            <p className="font-display text-[12px] font-semibold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-2">
+              Registration
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <h2 className="title mb-2">
+              Choose Your Path
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.3}>
+            <p className="text-para text-center max-w-md mx-auto">
+              Start free. Go all-in when you&apos;re ready.
+            </p>
+          </ScrollReveal>
         </div>
 
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto w-full">
 
           {/* Free Card */}
           <div
-            className="pricing-card opacity-0 p-8 rounded-xl shadow-[var(--shadow-soft-lift)] flex flex-col"
-            style={{ background: 'var(--color-canvas)', border: '1px solid var(--color-hairline)' }}
+            className="pricing-card opacity-0 p-8 rounded-[var(--rounded-xl)] shadow-[var(--shadow-soft-lift)] flex flex-col bg-[var(--color-canvas)] border border-[var(--color-hairline)] transition-all duration-300 hover:scale-[1.02]"
           >
-            <p className="text-xs font-bold uppercase tracking-[1px] mb-2 text-[var(--color-graphite)]">
+            <p className="font-display text-xs font-bold uppercase tracking-[1px] mb-2 text-[var(--color-graphite)]">
               Free Session
             </p>
-            <p className="text-5xl font-bold leading-none mb-1 text-[var(--color-ink)]">
+            <p className="font-display text-5xl font-bold leading-none mb-1 text-[var(--color-ink)]">
               ₹0
             </p>
-            <p className="text-xs mb-6 text-[var(--color-graphite)]">
+            <p className="text-xs mb-6 text-[var(--color-graphite)] font-medium">
               May 24 / 31 · Limited to 100 Students
             </p>
-            <ul className="flex flex-col gap-2 mb-8 text-sm text-[var(--color-charcoal)]">
+            <ul className="flex flex-col gap-2.5 mb-8 text-[14px] text-[var(--color-charcoal)]">
               {FREE_FEATURES.map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <CheckIcon />
@@ -100,11 +106,7 @@ export function Pricing() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-auto block text-center px-6 py-3.5 rounded-md text-sm font-bold uppercase tracking-[0.7px] border-2 transition-all hover:bg-[var(--color-ink)] hover:text-white"
-              style={{
-                borderColor: 'var(--color-ink)',
-                color: 'var(--color-ink)',
-              }}
+              className="mt-auto block text-center px-6 py-3.5 rounded-[var(--rounded-lg)] text-[13px] font-semibold uppercase tracking-[0.7px] border border-[var(--color-ink)] bg-white text-[var(--color-ink)] hover:bg-[var(--color-ink)] hover:text-white transition-all duration-300"
             >
               Register Free
             </a>
@@ -112,36 +114,32 @@ export function Pricing() {
 
           {/* Paid Card — Featured */}
           <div
-            className="pricing-card opacity-0 p-8 rounded-xl shadow-[var(--shadow-float)] flex flex-col relative overflow-hidden"
-            style={{
-              background: 'var(--color-canvas)',
-              border: '2px solid var(--color-primary)',
-            }}
+            className="pricing-card opacity-0 p-8 rounded-[var(--rounded-xl)] shadow-[var(--shadow-float)] flex flex-col relative overflow-hidden bg-[var(--color-canvas)] border-2 border-[var(--color-primary)] transition-all duration-300 hover:scale-[1.02]"
           >
             {/* Top accent bar */}
             <div
-              className="absolute top-0 left-0 right-0 h-1"
+              className="absolute top-0 left-0 right-0 h-1.5"
               style={{ background: 'var(--color-primary)' }}
             />
 
             <div className="flex items-start justify-between mb-2">
-              <p className="text-xs font-bold uppercase tracking-[1px] text-[var(--color-graphite)]">
+              <p className="font-display text-xs font-bold uppercase tracking-[1px] text-[var(--color-graphite)]">
                 10-Day Masterclass
               </p>
               <span
-                className="text-xs font-bold px-2 py-1 rounded"
+                className="text-[10px] font-bold px-2 py-0.5 rounded-full"
                 style={{ background: 'var(--color-bloom-coral)', color: 'white' }}
               >
                 EARLY BIRD
               </span>
             </div>
-            <p className="text-5xl font-bold leading-none mb-1 text-[var(--color-primary)]">
+            <p className="font-display text-5xl font-bold leading-none mb-1 text-[var(--color-primary)]">
               ₹999
             </p>
-            <p className="text-xs mb-6 text-[var(--color-graphite)]">
+            <p className="text-xs mb-6 text-[var(--color-graphite)] font-medium">
               June 1 Start · Nagpur Students Only
             </p>
-            <ul className="flex flex-col gap-2 mb-8 text-sm text-[var(--color-charcoal)]">
+            <ul className="flex flex-col gap-2.5 mb-8 text-[14px] text-[var(--color-charcoal)]">
               {PAID_FEATURES.map((item) => (
                 <li key={item} className="flex items-center gap-2">
                   <CheckIcon />
@@ -153,8 +151,7 @@ export function Pricing() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-auto block text-center px-6 py-3.5 rounded-md text-sm font-bold uppercase tracking-[0.7px] transition-all hover:brightness-110"
-              style={{ background: 'var(--color-primary)', color: 'white' }}
+              className="mt-auto block text-center px-6 py-3.5 rounded-[var(--rounded-lg)] text-[13px] font-semibold uppercase tracking-[0.7px] bg-[var(--color-primary)] text-white border border-transparent hover:bg-[var(--color-primary-deep)] transition-all duration-300 shadow-[var(--shadow-soft-lift)]"
             >
               Enrol for ₹999
             </a>
@@ -164,3 +161,4 @@ export function Pricing() {
     </section>
   )
 }
+
