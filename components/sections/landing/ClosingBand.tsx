@@ -5,7 +5,7 @@ import { ScrollReveal } from '@/components/animations/ScrollReveal'
 
 export function ClosingBand() {
   return (
-    <section className="max-w-6xl mx-auto bg-gray-100 rounded-3xl overflow-hidden mt-10 mb-10 p-8 md:p-12 text-center">
+    <section className="max-w-6xl mx-auto overflow-hidden mt-10 mb-10 p-8 md:p-12 text-center">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal delay={0.1}>
           <h2 className="title mb-4">

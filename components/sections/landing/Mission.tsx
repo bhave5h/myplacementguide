@@ -9,7 +9,7 @@ export function Mission() {
       <div className="max-w-6xl mx-auto px-4 sm:px-10 lg:px-10 py-10 lg:py-10">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal delay={0.1}>
-            <p className="title mb-3">
+            <p className="title mb-2">
               The Mission
             </p>
           </ScrollReveal>

@@ -30,11 +30,6 @@ export function Bonuses() {
     <section id="bonuses" className="max-w-6xl mx-auto bg-gray-100 py-12 lg:py-10 px-6 overflow-hidden mt-10 rounded-3xl">
       <div className="mx-auto flex flex-col items-center w-full">
         <div className="text-center mb-12">
-          <ScrollReveal delay={0.1}>
-            <p className="font-display text-[12px] font-semibold tracking-[0.12em] uppercase text-[var(--color-primary)] mb-2">
-              Extra Mile
-            </p>
-          </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <h2 className="title mb-2">
               Bonuses Included

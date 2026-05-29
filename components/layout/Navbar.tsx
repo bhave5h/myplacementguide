@@ -53,7 +53,7 @@ export function Navbar({ className }: { className?: string }) {
         className={`sticky top-0 left-0 right-0 z-50 transition-shadow duration-300 ${className || ''}`}
         role="banner"
       >
-        <div className="max-w-5xl lg:px-20 px-10 md:px-18 mx-auto px-0 h-full flex items-center justify-between">
+        <div className="max-w-5xl lg:px-0 px-10 mx-auto px-0 h-full flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"

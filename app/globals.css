@@ -112,7 +112,7 @@ html, body {
 
 
 .title {
-  @apply font-semibold text-3xl md:text-5xl leading-[1.05] text-center 
+  @apply font-semibold text-2xl md:text-3xl leading-[1.05] text-center 
 }
 
 .sub-title {
