@@ -53,7 +53,7 @@ export function Navbar({ className }: { className?: string }) {
         className={`sticky top-0 left-0 right-0 z-50 transition-shadow duration-300 ${className || ''}`}
         role="banner"
       >
-        <div className="max-w-[1366px] mx-auto px-8 h-full flex items-center justify-between">
+        <div className="max-w-5xl lg:px-20 px-10 md:px-18 mx-auto px-0 h-full flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
@@ -72,7 +72,7 @@ export function Navbar({ className }: { className?: string }) {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="relative px-4 py-1.5 t-body-md transition-colors hover:text-[var(--color-primary)]"
+                  className="relative px-4 py-1.5 font-bold transition-colors hover:text-[var(--color-primary)]"
                   style={{
                     color: isActive ? 'var(--color-primary)' : 'var(--color-ink)',
                     borderBottom: isActive ? '2px solid var(--color-primary)' : '2px solid transparent',
