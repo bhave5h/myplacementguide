@@ -7,6 +7,7 @@ import { Curriculum } from '@/components/sections/landing/Curriculum'
 import { Bonuses } from '@/components/sections/landing/Bonuses'
 import { Mission } from '@/components/sections/landing/Mission'
 import { Pricing } from '@/components/sections/landing/Pricing'
+import { FAQ } from '@/components/sections/landing/FAQ'
 import { ClosingBand } from '@/components/sections/landing/ClosingBand'
 
 export const metadata = homeMeta
@@ -22,6 +23,7 @@ export default function Home() {
       <Curriculum />
       <Bonuses />
       <Pricing />
+      <FAQ />
       <ClosingBand />
     </>
   )

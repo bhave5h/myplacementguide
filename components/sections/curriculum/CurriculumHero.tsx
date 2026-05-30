@@ -8,15 +8,7 @@ import { Button } from '@/components/ui/Button'
 
 export function CurriculumHero() {
   return (
-    <section
-      style={{
-        backgroundColor: 'var(--color-ink)',
-        overflow: 'hidden',
-        paddingTop: 96,
-        paddingBottom: 80,
-      }}
-      className="flex items-center justify-center text-center"
-    >
+    <section className="band-ink pt-24 pb-20">
       <div className="max-w-[1366px] mx-auto px-6 flex flex-col items-center gap-8 relative z-10">
 
         <ScrollReveal delay={0.1} direction="up">
@@ -26,32 +18,13 @@ export function CurriculumHero() {
         <SplitText
           text="10 Days to Corporate Ready"
           as="h1"
-          className="text-balance"
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(32px,5vw,60px)',
-            fontWeight: 500,
-            lineHeight: 1.05,
-            color: 'var(--color-on-ink)',
-            margin: 0,
-          }}
+          className="hero-title"
           by="word"
           staggerDelay={0.07}
         />
 
         <ScrollReveal delay={0.55}>
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 18,
-              fontWeight: 400,
-              lineHeight: 1.55,
-              color: 'var(--color-steel)',
-              maxWidth: 520,
-              margin: 0,
-            }}
-            className="text-balance"
-          >
+          <p className="hero-para">
             A structured, outcome-first journey from raw resume to confident corporate professional.
           </p>
         </ScrollReveal>
@@ -59,33 +32,17 @@ export function CurriculumHero() {
         {/* Stats row */}
         <ScrollReveal delay={0.75} className="flex items-center gap-10 mt-2">
           <div className="flex flex-col items-center">
-            <span
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 36,
-                fontWeight: 700,
-                color: 'var(--color-primary-bright)',
-                lineHeight: 1,
-              }}
-            >
+            <span className="font-display text-[36px] font-bold text-primary-bright leading-none">
               10
             </span>
-            <span style={{ fontSize: 14, color: 'var(--color-steel)', marginTop: 4 }}>Modules</span>
+            <span className="text-[14px] text-steel mt-1">Modules</span>
           </div>
-          <div style={{ width: 1, height: 40, backgroundColor: 'rgba(255,255,255,0.12)' }} />
+          <div className="w-[1px] h-10 bg-white/12" />
           <div className="flex flex-col items-center">
-            <span
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: 36,
-                fontWeight: 700,
-                color: 'var(--color-on-ink)',
-                lineHeight: 1,
-              }}
-            >
+            <span className="font-display text-[36px] font-bold text-on-ink leading-none">
               3
             </span>
-            <span style={{ fontSize: 14, color: 'var(--color-steel)', marginTop: 4 }}>Bonus Resources</span>
+            <span className="text-[14px] text-steel mt-1">Bonus Resources</span>
           </div>
         </ScrollReveal>
 

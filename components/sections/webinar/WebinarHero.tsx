@@ -60,7 +60,7 @@ export function WebinarHero() {
   const formatTime = (time: number) => (time < 10 ? `0${time}` : time)
 
   return (
-    <section className="bg-[var(--color-ink)] pt-20 pb-16 px-6 text-center overflow-hidden rounded-b-3xl">
+    <section className="bg-[var(--color-ink)] pt-20 pb-16 px-6 text-center overflow-hidden rounded-3xl">
       <div className="max-w-[850px] mx-auto flex flex-col items-center">
         {/* Live Badge */}
         <ScrollReveal delay={0.1}>

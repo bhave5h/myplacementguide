@@ -100,7 +100,7 @@ export function WebinarForm() {
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               {error && (
-                <div className="bg-[var(--color-bloom-rose)] border border-[var(--color-bloom-coral)] text-[var(--color-bloom-deep)] text-[13px] font-semibold p-3.5 rounded-xl">
+                <div className="bg-red-50 border border-red-500 text-red-800 text-[13px] font-semibold p-3.5 rounded-xl">
                   ⚠️ {error}
                 </div>
               )}

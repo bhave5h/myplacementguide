@@ -128,7 +128,7 @@ export function Pricing() {
               </p>
               <span
                 className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                style={{ background: 'var(--color-bloom-coral)', color: 'white' }}
+                style={{ background: '#ff5050', color: 'white' }}
               >
                 EARLY BIRD
               </span>

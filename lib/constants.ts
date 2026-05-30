@@ -9,7 +9,6 @@ export const FREE_SEATS   = 100
 
 export const NAV_LINKS = [
   { label: 'Home',       href: '/' },
-  { label: 'Curriculum', href: '/curriculum' },
   { label: 'Mission',    href: '/mission' },
   { label: 'Webinar',    href: '/webinar' },
   { label: 'Register',   href: '/register' },

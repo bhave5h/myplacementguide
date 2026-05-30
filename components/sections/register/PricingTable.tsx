@@ -10,7 +10,7 @@ import { m, LazyMotion, domAnimation } from 'framer-motion'
 export function PricingTable() {
   return (
     /* ── Cloud band for pricing (DESIGN.md: cloud alternating band) ── */
-    <section className="bg-[var(--color-cloud)] py-20 px-6 overflow-hidden">
+    <section className="band-cloud">
       <div className="max-w-[900px] mx-auto">
         <LazyMotion features={domAnimation}>
           <div className="flex flex-col md:flex-row gap-8 items-stretch justify-center">
@@ -27,27 +27,26 @@ export function PricingTable() {
                 >
                   {/* card-pricing-tier — DESIGN.md spec */}
                   <div
-                    className={`bg-[var(--color-canvas)] rounded-[var(--rounded-xl)] shadow-[var(--shadow-soft-lift)] p-8 flex flex-col h-full relative overflow-hidden
-                      ${isFeatured ? 'border-t-[3px] border-t-[var(--color-primary)]' : 'border border-[var(--color-hairline)]'}`}
+                    className={`card-flat p-8 ${isFeatured ? 'shadow-float border-t-[3px] border-t-primary border-x-0 border-b-0' : ''}`}
                   >
                     <div className="mb-7">
                       <Badge variant={isFeatured ? 'new' : 'free'} className="mb-5">
                         {plan.badge}
                       </Badge>
-                      <h3 className="font-display text-[24px] font-medium text-[var(--color-ink)] mb-2.5 leading-[1.17]">
+                      <h3 className="card-title text-[24px] mb-2.5 leading-[1.17]">
                         {plan.tier}
                       </h3>
                       <div className="flex items-baseline gap-2.5 mb-1.5">
-                        <span className={`font-display text-[36px] font-bold leading-none ${isFeatured ? 'text-[var(--color-primary)]' : 'text-[var(--color-ink)]'}`}>
+                        <span className={`font-display text-[36px] font-bold leading-none ${isFeatured ? 'text-primary' : 'text-ink'}`}>
                           {plan.price}
                         </span>
                         {isFeatured && (
-                          <span className="text-[16px] text-[var(--color-graphite)] line-through">
+                          <span className="text-[16px] text-graphite line-through">
                             ₹1,999
                           </span>
                         )}
                       </div>
-                      <p className="text-[13px] text-[var(--color-graphite)]">
+                      <p className="text-[13px] text-graphite">
                         {plan.date} · {plan.seats}
                       </p>
                     </div>
@@ -58,16 +57,16 @@ export function PricingTable() {
                           <Check
                             size={18}
                             weight="bold"
-                            className="text-[var(--color-primary)] shrink-0 mt-0.5"
+                            className="text-primary shrink-0 mt-0.5"
                           />
-                          <span className="text-[14px] text-[var(--color-charcoal)] leading-[1.55]">
+                          <span className="body-text leading-[1.55]">
                             {feature}
                           </span>
                         </li>
                       ))}
                     </ul>
 
-                    <div className="pt-6 border-t border-[var(--color-hairline)]">
+                    <div className="pt-6 border-t border-hairline">
                       <Button
                         variant={isFeatured ? 'primary' : 'outline'}
                         size="lg"
@@ -77,7 +76,7 @@ export function PricingTable() {
                         {plan.cta}
                       </Button>
                       {isFeatured && (
-                        <p className="text-[12px] text-center text-[var(--color-graphite)] mt-3 font-medium">
+                        <p className="text-[12px] text-center text-graphite mt-3 font-medium">
                           100% Satisfaction Guarantee · Secure Payment
                         </p>
                       )}

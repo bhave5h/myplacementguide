@@ -8,25 +8,12 @@ import { SplitText } from '@/components/animations/SplitText'
 export function BeyondDegree() {
   return (
     /* ── Cloud alternating band ── */
-    <section
-      style={{ backgroundColor: 'var(--color-cloud)', padding: '80px 24px', overflow: 'hidden' }}
-    >
-      <div className="max-w-[900px] mx-auto">
+    <section className="band-cloud">
+      <div className="container-narrow">
         <SectionLabel className="mb-10">Beyond The Degree</SectionLabel>
 
         <ScrollReveal>
-          <blockquote
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(22px,3.5vw,40px)',
-              fontWeight: 500,
-              lineHeight: 1.2,
-              fontStyle: 'italic',
-              color: 'var(--color-primary)',
-              marginBottom: 48,
-            }}
-            className="text-balance"
-          >
+          <blockquote className="font-display text-[clamp(22px,3.5vw,40px)] font-medium leading-[1.2] italic text-primary mb-12 text-balance">
             "I've seen students with 9.0 CGPA struggle to explain their value."
           </blockquote>
         </ScrollReveal>
@@ -37,25 +24,12 @@ export function BeyondDegree() {
             as="p"
             by="word"
             staggerDelay={0.018}
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 17,
-              fontWeight: 400,
-              color: 'var(--color-charcoal)',
-              lineHeight: 1.7,
-            }}
+            className="body-text text-[17px] leading-[1.7]"
           />
         </div>
 
         <ScrollReveal delay={0.35}>
-          <div
-            style={{
-              height: 1,
-              width: 48,
-              backgroundColor: 'var(--color-primary)',
-              margin: '0 auto 40px',
-            }}
-          />
+          <div className="h-[1px] w-12 bg-primary mx-auto mb-10" />
         </ScrollReveal>
 
         <div className="max-w-2xl mx-auto text-center">
@@ -64,13 +38,7 @@ export function BeyondDegree() {
             as="p"
             by="word"
             staggerDelay={0.018}
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 17,
-              fontWeight: 400,
-              color: 'var(--color-charcoal)',
-              lineHeight: 1.7,
-            }}
+            className="body-text text-[17px] leading-[1.7]"
           />
         </div>
       </div>

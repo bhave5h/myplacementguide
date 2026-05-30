@@ -9,48 +9,18 @@ import { m, LazyMotion, domAnimation } from 'framer-motion'
 export function MissionHero() {
   return (
     /* ── Full-viewport ink slab ── */
-    <section
-      style={{
-        backgroundColor: 'var(--color-ink)',
-        minHeight: '100svh',
-        overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingTop: 80,
-        position: 'relative',
-      }}
-    >
+    <section className="band-ink min-h-[100svh] pt-20">
       <div className="max-w-[1366px] mx-auto px-6 text-center z-10 flex flex-col items-center">
         <SplitText
           text="Bridging Campus to Corporate."
           as="h1"
-          className="text-balance"
-          style={{
-            fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(36px,6vw,72px)',
-            fontWeight: 500,
-            lineHeight: 1.0,
-            color: 'var(--color-on-ink)',
-            marginBottom: 28,
-          }}
+          className="hero-title text-[clamp(36px,6vw,72px)] mb-7 leading-none"
           by="char"
           staggerDelay={0.028}
         />
 
         <ScrollReveal delay={1.4}>
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontSize: 20,
-              fontWeight: 400,
-              color: 'var(--color-steel)',
-              lineHeight: 1.5,
-              maxWidth: 480,
-              margin: 0,
-            }}
-            className="text-balance"
-          >
+          <p className="hero-para text-[20px] max-w-[480px] mb-0 leading-[1.5]">
             A platform built out of frustration, not ambition.
           </p>
         </ScrollReveal>
