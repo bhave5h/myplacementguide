@@ -1,4 +1,4 @@
-export const SITE_NAME    = 'MyPlacementGuide'
+export const SITE_NAME    = 'MyPlacementGuru'
 export const MENTOR_NAME  = 'Sarang Divakar Thakre'
 export const FREE_DATE    = 'May 24 & 31, 2025'
 export const PAID_START   = 'June 1, 2025'

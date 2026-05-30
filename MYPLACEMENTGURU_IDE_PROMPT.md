@@ -319,13 +319,13 @@ export const CURRICULUM_DAYS = [
   { days: '5–6', title: 'Advanced Job Search Strategies',      desc: 'Crack the hidden job market — 70% of roles are never posted. Learn exactly how to access them.' },
   { days: '7–8', title: 'Live Mock Interviews & Body Language', desc: 'Real-time feedback, camera presence, and the body language signals that decide in the first 60 seconds.' },
   { days: '9',   title: 'Salary Negotiation',                  desc: 'Stop accepting the first offer. Use data-backed scripts to demand — and receive — what you deserve.' },
-  { days: '10',  title: 'Graduation & Internship Selection',   desc: 'Top performers earn a direct internship opportunity at BigTopSocial or Matoshri Realestate.' },
+  { days: '10',  title: 'Graduation & Internship Selection',   desc: 'Top performers earn a direct internship opportunity at BigTopSocial' },
 ]
 
 export const BONUSES = [
   { label: 'Bonus 01', title: 'Premium Resume Templates', desc: 'The exact templates used across NagpurHeights & BigTopSocial — not generic Canva edits.' },
   { label: 'Bonus 02', title: 'Cold Email Scripts for HRs', desc: 'Copy-paste outreach sequences that get replies from recruiters who have never heard of you.' },
-  { label: 'Bonus 03', title: 'The Internship Gateway', desc: 'Top performers get a direct opportunity to intern at BigTopSocial or Matoshri Realestate.' },
+  { label: 'Bonus 03', title: 'The Internship Gateway', desc: 'Top performers get a direct opportunity to intern at BigTopSocial.' },
 ]
 
 export const PRICING = [

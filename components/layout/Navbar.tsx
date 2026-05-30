@@ -59,7 +59,7 @@ export function Navbar({ className }: { className?: string }) {
             href="/"
             className="font-display font-bold text-xl tracking-tight"
             style={{ color: 'var(--color-ink-deep)' }}
-            aria-label="MyPlacementGuide home"
+            aria-label="MyPlacementGuru home"
           >
             {SITE_NAME}
           </Link>

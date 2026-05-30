@@ -90,12 +90,12 @@ export function Hero({
                     "eventStatus": "https://schema.org/EventScheduled",
                     "location": {
                       "@type": "VirtualLocation",
-                      "url": "https://myplacementguide.com"
+                      "url": "https://myplacementguru.com"
                     },
                     "organizer": {
                       "@type": "Organization",
-                      "name": "MyPlacementGuide",
-                      "url": "https://myplacementguide.com"
+                      "name": "MyPlacementGuru",
+                      "url": "https://myplacementguru.com"
                     },
                     "offers": {
                       "@type": "Offer",

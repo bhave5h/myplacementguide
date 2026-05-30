@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const BASE_URL = 'https://myplacementguide-sw2p.vercel.app/'
+const BASE_URL = 'https://myplacementguru-sw2p.vercel.app/'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

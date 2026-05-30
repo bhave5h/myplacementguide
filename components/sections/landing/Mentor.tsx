@@ -68,7 +68,7 @@ export function AboutMentor({
             "@type": "Person",
             "name": name,
             "jobTitle": "Founder & Career Mentor",
-            "image": `https://myplacementguide.com${imageSrc}`,
+            "image": `https://myplacementguru.com${imageSrc}`,
             "worksFor": [
               {
                 "@type": "Organization",

@@ -80,7 +80,6 @@ export function Curriculum() {
               </ScrollReveal>
             ))}
           </div>
-
         </div>
       </div>
     </section>

@@ -14,7 +14,7 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title:       { default: 'MyPlacementGuide', template: '%s | MyPlacementGuide' },
+  title:       { default: 'MyPlacementGuru', template: '%s | MyPlacementGuru' },
   description: 'Career Mastery Masterclass for Nagpur students by Sarang Divakar Thakre.',
   icons:       { icon: '/favicon.ico' },
 }
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             'provider': {
               '@type': 'Person',
               'name':  'Sarang Thakre',
-              'url':   'https://myplacementguide-sw2p.vercel.app',
+              'url':   'https://myplacementguru-sw2p.vercel.app',
             },
             'offers': {
               '@type':         'Offer',
