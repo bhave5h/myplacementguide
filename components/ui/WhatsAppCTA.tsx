@@ -20,10 +20,10 @@ export function WhatsAppCTA() {
         {isVisible && (
           <m.div
             initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: -30 }}
             exit={{ opacity: 0, y: 40 }}
             transition={{ type: "spring", damping: 22, stiffness: 120 }}
-            className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[9999] flex items-center gap-3"
+            className="fixed bottom-10 right-10 md:bottom-10 md:right-10 z-[9999] flex items-center gap-3"
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
           >
@@ -32,7 +32,7 @@ export function WhatsAppCTA() {
                 <m.div
                   initial={{ opacity: 0, x: 12 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 8 }}
+                  exit={{ opacity: 0, x: 10 }}
                   style={{
                     backgroundColor: "var(--color-ink)",
                     color: "var(--color-on-ink)",
@@ -62,7 +62,7 @@ export function WhatsAppCTA() {
                 width: 52,
                 height: 52,
                 borderRadius: "50%",
-                backgroundColor: "#25D366",
+                backgroundColor: "#0b0b0bff",
                 color: "#fff",
                 transition: "box-shadow 0.2s",
               }}

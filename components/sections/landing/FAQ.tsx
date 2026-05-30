@@ -16,8 +16,8 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section className="band-canvas py-10 md:py-12">
-      <div className="max-w-[760px] mx-auto">
+    <section className="band-canvas">
+      <div className="max-w-6xl mx-auto">
         <div className="bg-cloud rounded-xl p-8 shadow-soft-lift">
           <h3 className="card-title text-[24px] text-center mb-7">
             Frequently Asked Questions
