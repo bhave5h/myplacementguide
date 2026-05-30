@@ -5,7 +5,7 @@ import { NAV_LINKS, SITE_NAME, WHATSAPP_URL } from '@/lib/constants'
 
 export function Footer() {
   return (
-    <footer className="bg-black text-[var(--color-on-ink)] py-16 px-8">
+    <footer className="bg-black text-[var(--color-on-ink)] py-10 px-8">
       <div className="max-w-5xl mx-auto">
         {/* ── 3-Column Grid ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
@@ -76,7 +76,7 @@ export function Footer() {
         </div>
 
         {/* ── Bottom Strip ── */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-[rgba(255,255,255,0.08)]">
+        <div className="pt-4 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-[rgba(255,255,255,0.08)]">
           <p className="t-caption-sm text-[var(--color-graphite)]">
             © 2025 {SITE_NAME} 
           </p>

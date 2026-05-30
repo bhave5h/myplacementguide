@@ -64,3 +64,11 @@ export const registerMeta = generateMeta({
   ogImage:     '/Images/og/og-register.jpg',
   path:        '/register',
 })
+
+export const webinarMeta = generateMeta({
+  title:       'MyPlacementGuide | Free Career Masterclass Webinar',
+  description: 'Join the free live career masterclass by Sarang Divakar Thakre. Learn how to design ATS-friendly resumes, build LinkedIn SEO, and crack interviews.',
+  ogImage:     '/Images/og/og-webinar.jpg',
+  path:        '/webinar',
+})
+
