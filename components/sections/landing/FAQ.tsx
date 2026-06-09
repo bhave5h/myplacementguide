@@ -16,10 +16,10 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section className="band-canvas">
-      <div className="max-w-6xl mx-auto">
-        <div className="bg-cloud rounded-xl p-8 shadow-soft-lift">
-          <h3 className="card-title text-[24px] text-center mb-7">
+    <section>
+      <div className="max-w-6xl pt-10">
+        <div className="bg-gray-100 rounded-3xl p-8 shadow-soft-lift">
+          <h3 className="title text-center mb-10">
             Frequently Asked Questions
           </h3>
 
